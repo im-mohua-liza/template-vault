@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Velvet — Skin, hair & wellness studio</title>
+  <meta name="description" content="A calm studio for skin, hair and wellbeing. Book your ritual.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav" data-header>
+    <a href="#" class="logo">Velvet</a>
+    <nav><a href="#rituals">Rituals</a><a href="#results">Results</a><a href="#book">Book</a></nav>
+    <a href="#book" class="btn btn--sm fx-shine">Book now</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__text">
+        <p class="eyebrow" data-reveal>Skin · Hair · Wellness</p>
+        <h1 data-split>Feel <em>beautifully</em> yourself.</h1>
+        <p class="lead" data-reveal data-delay="400">Slow, thoughtful treatments in a quiet studio. Leave glowing after a <span data-rotate="facial.|massage.|blowout.|brow shape." data-interval="2000"></span></p>
+        <div class="hero__cta" data-reveal data-delay="550">
+          <a href="#book" class="btn fx-shine" data-magnetic>Book a ritual</a>
+          <a href="#rituals" class="link fx-underline">Explore treatments</a>
+        </div>
+        <div class="hero__rating" data-reveal data-delay="700"><span class="stars">★★★★★</span> 4.9 from 1,200+ guests</div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="blob blob--1 fx-blob"></div>
+        <div class="blob blob--2 fx-blob"></div>
+        <div class="arch" data-reveal="clip" data-delay="200"><div class="arch__img" data-parallax="0.08"></div></div>
+        <div class="pill-card fx-float"><b>Glow Facial</b><small>60 min · from $95</small></div>
+        <div class="circle-badge fx-spin"><svg viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#c">clean beauty · cruelty free · clean beauty · </textPath></text></svg></div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="strip" data-marquee="40"><span>Facials</span><i>✧</i><span>Massage</span><i>✧</i><span>Lashes & Brows</span><i>✧</i><span>Hair Colour</span><i>✧</i><span>Body Rituals</span><i>✧</i></div>
+
+    <!-- RITUALS -->
+    <section class="rituals" id="rituals" data-tabs>
+      <div class="rituals__head">
+        <h2 data-split>Our rituals</h2>
+        <div class="tabs" data-reveal><button data-tab="skin" class="is-active">Skin</button><button data-tab="body">Body</button><button data-tab="hair">Hair</button></div>
+      </div>
+      <div data-panel="skin" class="menu">
+        <div class="item"><div><h3>Signature Glow Facial</h3><p>Double cleanse, enzyme peel, lymphatic massage, LED.</p></div><span>60 min</span><b>$95</b></div>
+        <div class="item"><div><h3>Hydra Infusion</h3><p>Deep hydration for tired, dehydrated skin.</p></div><span>75 min</span><b>$130</b></div>
+        <div class="item"><div><h3>Calm & Repair</h3><p>For sensitive skin. Fragrance-free, gentle, restorative.</p></div><span>50 min</span><b>$85</b></div>
+      </div>
+      <div data-panel="body" class="menu">
+        <div class="item"><div><h3>Velvet Massage</h3><p>Warm oil, slow pressure, total reset.</p></div><span>60 min</span><b>$90</b></div>
+        <div class="item"><div><h3>Hot Stone Ritual</h3><p>Basalt stones melt tension from head to toe.</p></div><span>90 min</span><b>$140</b></div>
+      </div>
+      <div data-panel="hair" class="menu">
+        <div class="item"><div><h3>Cut & Finish</h3><p>Consultation, wash, precision cut, blowout.</p></div><span>60 min</span><b>$75</b></div>
+        <div class="item"><div><h3>Gloss & Tone</h3><p>Shine, softness and a fresh colour refresh.</p></div><span>45 min</span><b>$65</b></div>
+        <div class="item"><div><h3>Balayage</h3><p>Hand-painted, lived-in colour.</p></div><span>180 min</span><b>$260</b></div>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="results" id="results">
+      <div class="results__text">
+        <p class="eyebrow" data-reveal>Real results</p>
+        <h2 data-split>Six weeks of the Glow programme</h2>
+        <p data-reveal>Drag the slider to compare. No filters, no retouching: just consistent care and the right products.</p>
+        <ul class="results__list" data-stagger>
+          <li><b data-count="72" data-suffix="%"></b> less visible redness</li>
+          <li><b data-count="3" data-suffix="x"></b> skin hydration</li>
+          <li><b data-count="98" data-suffix="%"></b> would recommend</li>
+        </ul>
+      </div>
+      <div class="ba" data-compare="50" data-reveal="zoom">
+        <div class="ba__img ba__img--before"><span>Before</span></div>
+        <div class="ba__img ba__img--after"><span>After</span></div>
+      </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote">
+      <div data-carousel="6000">
+        <blockquote><p>"The most relaxing hour of my month. My skin has never looked like this."</p><cite>Amara J.</cite></blockquote>
+        <blockquote><p>"Beautiful space, gentle hands, and they actually listen to what you want."</p><cite>Chloe R.</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section class="book" id="book">
+      <div class="book__card" data-reveal="up">
+        <h2 data-split>Book your <em>ritual</em></h2>
+        <form onsubmit="event.preventDefault(); this.innerHTML='<p class=&quot;thanks&quot;>See you soon ✧ We have sent a confirmation.</p>'">
+          <select aria-label="Treatment"><option>Signature Glow Facial</option><option>Velvet Massage</option><option>Cut & Finish</option><option>Balayage</option></select>
+          <input type="date" required aria-label="Date">
+          <input required placeholder="Your name" aria-label="Name">
+          <input type="tel" required placeholder="Phone" aria-label="Phone">
+          <button class="btn fx-shine" data-magnetic>Confirm booking</button>
+        </form>
+        <p class="small">Open Tue–Sun · 9am–8pm · 22 Rose Street</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><a href="#" class="logo">Velvet</a><span>© 2026 Velvet Studio</span><nav><a href="#">Instagram</a><a href="#">Gift cards</a></nav></footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

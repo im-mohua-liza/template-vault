@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PULSE — Train loud. Live louder.</title>
+  <meta name="description" content="High-intensity training club. Classes, coaches and events that push you further.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" data-scroll-progress></div>
+  <header class="nav" data-header>
+    <a href="#" class="logo">PULSE<i></i></a>
+    <nav><a href="#classes">Classes</a><a href="#coaches">Coaches</a><a href="#plans">Plans</a></nav>
+    <a href="#plans" class="btn btn--sm" data-magnetic>Join now</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"><span>PULSE</span></div>
+      <p class="hero__kicker" data-reveal>// High-intensity training club</p>
+      <h1 class="hero__title">
+        <span data-split>Train loud.</span>
+        <span class="outline" data-split data-delay="250">Live louder.</span>
+      </h1>
+      <div class="hero__row">
+        <p data-reveal data-delay="500">Classes that hit different. Coaches who actually care. A community that won't let you quit.</p>
+        <div class="event" data-reveal="zoom" data-delay="650">
+          <small>Summer Throwdown starts in</small>
+          <div class="countdown" data-countdown="2026-12-31T09:00:00">
+            <div><b data-unit="d">00</b><span>Days</span></div>
+            <div><b data-unit="h">00</b><span>Hrs</span></div>
+            <div><b data-unit="m">00</b><span>Min</span></div>
+            <div><b data-unit="s">00</b><span>Sec</span></div>
+          </div>
+          <a href="#plans" class="btn" data-magnetic>Get your pass</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CROSSING TAPES -->
+    <section class="tapes" aria-hidden="true">
+      <div class="tape tape--a" data-marquee="22"><span>No excuses</span><b>✦</b><span>Just reps</span><b>✦</b><span>Sweat equity</span><b>✦</b><span>Stronger daily</span><b>✦</b></div>
+      <div class="tape tape--b" data-marquee="26" data-marquee-reverse><span>HIIT</span><b>✦</b><span>Boxing</span><b>✦</b><span>Strength</span><b>✦</b><span>Spin</span><b>✦</b><span>Mobility</span><b>✦</b></div>
+    </section>
+
+    <!-- CLASSES schedule -->
+    <section class="classes" id="classes" data-tabs>
+      <div class="head">
+        <h2 data-split>This week's <em>classes</em></h2>
+        <div class="days" data-reveal>
+          <button data-tab="mon" class="is-active">Mon</button><button data-tab="tue">Tue</button><button data-tab="wed">Wed</button><button data-tab="thu">Thu</button><button data-tab="fri">Fri</button>
+        </div>
+      </div>
+      <div data-panel="mon" class="schedule">
+        <div class="slot"><time>06:30</time><h3>Sunrise HIIT</h3><span>45 min · Jay</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>12:15</time><h3>Lunch Burn</h3><span>30 min · Mira</span><em class="lvl lvl--2">Medium</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>18:00</time><h3>Fight Club Boxing</h3><span>60 min · Dre</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>19:30</time><h3>Deep Stretch</h3><span>45 min · Leah</span><em class="lvl lvl--1">Easy</em><a href="#plans">Book</a></div>
+      </div>
+      <div data-panel="tue" class="schedule">
+        <div class="slot"><time>07:00</time><h3>Power Spin</h3><span>45 min · Mira</span><em class="lvl lvl--2">Medium</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>18:30</time><h3>Strength Lab</h3><span>60 min · Jay</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>20:00</time><h3>Yoga Flow</h3><span>50 min · Leah</span><em class="lvl lvl--1">Easy</em><a href="#plans">Book</a></div>
+      </div>
+      <div data-panel="wed" class="schedule">
+        <div class="slot"><time>06:30</time><h3>Sunrise HIIT</h3><span>45 min · Jay</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>17:30</time><h3>Kettlebell Club</h3><span>45 min · Dre</span><em class="lvl lvl--2">Medium</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>19:00</time><h3>Fight Club Boxing</h3><span>60 min · Dre</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+      </div>
+      <div data-panel="thu" class="schedule">
+        <div class="slot"><time>07:00</time><h3>Power Spin</h3><span>45 min · Mira</span><em class="lvl lvl--2">Medium</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>12:15</time><h3>Lunch Burn</h3><span>30 min · Mira</span><em class="lvl lvl--2">Medium</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>18:30</time><h3>Strength Lab</h3><span>60 min · Jay</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+      </div>
+      <div data-panel="fri" class="schedule">
+        <div class="slot"><time>06:30</time><h3>Friday Finisher</h3><span>45 min · All coaches</span><em class="lvl lvl--3">Intense</em><a href="#plans">Book</a></div>
+        <div class="slot"><time>18:00</time><h3>Mobility & Recovery</h3><span>45 min · Leah</span><em class="lvl lvl--1">Easy</em><a href="#plans">Book</a></div>
+      </div>
+    </section>
+
+    <!-- COACHES -->
+    <section class="coaches" id="coaches">
+      <div class="head"><h2 data-split>Meet your <em>coaches</em></h2></div>
+      <div class="coaches__grid" data-stagger>
+        <article class="coach" data-tilt="12"><div class="coach__img c1"><span>JAY</span></div><h3>Jay Brooks</h3><p>HIIT · Strength</p></article>
+        <article class="coach" data-tilt="12"><div class="coach__img c2"><span>MIRA</span></div><h3>Mira Patel</h3><p>Spin · Conditioning</p></article>
+        <article class="coach" data-tilt="12"><div class="coach__img c3"><span>DRE</span></div><h3>Dre Walker</h3><p>Boxing · Kettlebells</p></article>
+        <article class="coach" data-tilt="12"><div class="coach__img c4"><span>LEAH</span></div><h3>Leah Chen</h3><p>Yoga · Mobility</p></article>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="numbers" data-stagger>
+      <div><b data-count="2400" data-suffix="+"></b><span>Members</span></div>
+      <div><b data-count="60"></b><span>Classes a week</span></div>
+      <div><b data-count="12"></b><span>Pro coaches</span></div>
+      <div><b data-count="24" data-suffix="/7"></b><span>Open access</span></div>
+    </section>
+
+    <!-- PLANS -->
+    <section class="plans" id="plans">
+      <div class="head"><h2 data-split>Pick your <em>plan</em></h2></div>
+      <div class="plans__grid" data-stagger>
+        <article class="plan"><h3>Drop-in</h3><p class="price">$18<small>/class</small></p><ul><li>Any single class</li><li>Towel + locker</li></ul><a href="#" class="btn btn--line">Book a class</a></article>
+        <article class="plan plan--hot"><span class="plan__tag">Best value</span><h3>Unlimited</h3><p class="price">$89<small>/month</small></p><ul><li>Unlimited classes</li><li>24/7 gym access</li><li>Free event pass</li><li>1 PT session / month</li></ul><a href="#" class="btn">Join unlimited</a></article>
+        <article class="plan"><h3>10-Pack</h3><p class="price">$150<small>/10 classes</small></p><ul><li>Valid for 3 months</li><li>Share with a friend</li></ul><a href="#" class="btn btn--line">Buy pack</a></article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final">
+      <h2 data-split>First class is <em>free.</em></h2>
+      <a href="#plans" class="btn btn--big" data-magnetic="0.5">Claim it now →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#" class="logo">PULSE<i></i></a>
+    <p>221 Warehouse St, Brooklyn NY · Open 24/7</p>
+    <nav><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a></nav>
+  </footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

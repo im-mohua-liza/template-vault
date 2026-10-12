@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drift One — Wireless headphones, reimagined</title>
+  <meta name="description" content="40 hours of battery, adaptive noise cancelling and sound that disappears into your day.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-color="sage">
+  <header class="nav" data-header>
+    <a href="#" class="logo">drift</a>
+    <nav><a href="#features">Features</a><a href="#specs">Specs</a><a href="#reviews">Reviews</a></nav>
+    <a href="#buy" class="cart" aria-label="Cart">Bag <span id="bag">0</span></a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__bgword" aria-hidden="true" data-parallax="0.3">DRIFT</div>
+      <div class="hero__text">
+        <p class="kicker" data-reveal>Introducing Drift One</p>
+        <h1 data-split="chars">Sound, unplugged.</h1>
+      </div>
+      <!-- CSS-built headphones -->
+      <div class="product" data-reveal="zoom" data-delay="300" aria-hidden="true">
+        <div class="hp fx-float">
+          <div class="hp__band"></div>
+          <div class="hp__cup hp__cup--l"><i></i></div>
+          <div class="hp__cup hp__cup--r"><i></i></div>
+        </div>
+        <div class="product__shadow"></div>
+      </div>
+      <div class="hero__buy" data-reveal data-delay="600">
+        <div class="swatches" role="radiogroup" aria-label="Colour">
+          <button data-pick="sage" class="is-active" aria-label="Sage"></button>
+          <button data-pick="sand" aria-label="Sand"></button>
+          <button data-pick="midnight" aria-label="Midnight"></button>
+          <button data-pick="coral" aria-label="Coral"></button>
+        </div>
+        <p><b>$299</b> · Free shipping · 2-year warranty</p>
+        <button class="btn" data-add data-confetti data-ripple>Add to bag</button>
+      </div>
+    </section>
+
+    <!-- SKEW TAPE -->
+    <div class="tape" data-skew><div data-marquee="25"><span>40H BATTERY</span><b>●</b><span>ADAPTIVE ANC</span><b>●</b><span>SPATIAL AUDIO</span><b>●</b><span>250 G</span><b>●</b><span>USB-C FAST CHARGE</span><b>●</b></div></div>
+
+    <!-- SCRUB statement -->
+    <section class="statement" id="features">
+      <p data-scrub>We spent three years removing everything you don't need from a pair of headphones. What's left is lighter, quieter and lasts all week.</p>
+    </section>
+
+    <!-- FEATURES (stack) -->
+    <section class="features">
+      <div class="stack" data-stack="100">
+        <article class="feat feat--1"><div><span class="feat__n" data-count="40" data-suffix="h"></span><h3>Battery that outlasts your week</h3><p>Ten minutes of charging gives you five hours of listening.</p></div><div class="feat__vis feat__vis--battery"><i></i></div></article>
+        <article class="feat feat--2"><div><span class="feat__n">−42dB</span><h3>Silence, on demand</h3><p>Eight microphones adapt to trains, cafés and open-plan offices in real time.</p></div><div class="feat__vis feat__vis--waves"><i></i><i></i><i></i><i></i></div></article>
+        <article class="feat feat--3"><div><span class="feat__n" data-count="250" data-suffix="g"></span><h3>Light enough to forget</h3><p>Memory-foam cushions and a featherweight frame for all-day comfort.</p></div><div class="feat__vis feat__vis--feather">🪶</div></article>
+      </div>
+    </section>
+
+    <!-- SPECS -->
+    <section class="specs" id="specs">
+      <h2 data-split>Tech specs</h2>
+      <dl data-stagger="50">
+        <div><dt>Drivers</dt><dd>40 mm custom dynamic</dd></div>
+        <div><dt>Battery</dt><dd>Up to 40 h (ANC on)</dd></div>
+        <div><dt>Charging</dt><dd>USB-C, 10 min = 5 h</dd></div>
+        <div><dt>Connectivity</dt><dd>Bluetooth 5.4, multipoint</dd></div>
+        <div><dt>Weight</dt><dd>250 g</dd></div>
+        <div><dt>In the box</dt><dd>Case, cable, 3.5 mm adapter</dd></div>
+      </dl>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="reviews__grid" data-stagger>
+        <blockquote><b>★★★★★</b><p>"The best-sounding headphones under $400. Not close."</p><cite>The Verge</cite></blockquote>
+        <blockquote><b>★★★★★</b><p>"I forgot I was wearing them on a 9-hour flight."</p><cite>Wired</cite></blockquote>
+        <blockquote><b>★★★★★</b><p>"Gorgeous colours, ridiculous battery life."</p><cite>Wallpaper*</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- BUY -->
+    <section class="buy" id="buy">
+      <h2 data-split>Make it yours.</h2>
+      <p data-reveal>Free 30-day returns. Ships in 24 hours.</p>
+      <button class="btn btn--big" data-add data-confetti data-ripple data-magnetic>Add to bag · $299</button>
+    </section>
+  </main>
+
+  <footer class="footer"><span class="logo">drift</span><span>© 2026 Drift Audio</span><nav><a href="#">Support</a><a href="#">Warranty</a><a href="#">Stores</a></nav></footer>
+
+  <script src="../_shared/motion.js"></script>
+  <script>
+    // Colour picker re-themes the whole page
+    document.querySelectorAll('[data-pick]').forEach(b => b.addEventListener('click', () => {
+      document.body.dataset.color = b.dataset.pick;
+      document.querySelectorAll('[data-pick]').forEach(x => x.classList.toggle('is-active', x === b));
+    }));
+    // Bag counter
+    let n = 0;
+    document.querySelectorAll('[data-add]').forEach(b => b.addEventListener('click', () => {
+      document.getElementById('bag').textContent = ++n;
+      b.dataset.label = b.dataset.label || b.textContent;
+      b.textContent = 'Added ✓';
+      setTimeout(() => { b.textContent = b.dataset.label; }, 1400);
+    }));
+  </script>
+</body>
+</html>

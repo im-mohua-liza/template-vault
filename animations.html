@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animation Kit — live demos</title>
+  <script>document.documentElement.classList.add('motion')</script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="templates/_shared/motion.css">
+  <style>
+    :root { --bg: #0c0c0e; --panel: #141417; --text: #f1efe9; --muted: #8e8c86; --line: rgba(255,255,255,.08); --accent: #e8c27a; --cursor: #e8c27a; }
+    [data-theme="light"] { --bg: #f4f1ea; --panel: #fff; --text: #1a1a1a; --muted: #6b6860; --line: rgba(0,0,0,.1); }
+    * { box-sizing: border-box; margin: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font: 15px/1.6 Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; transition: background .4s, color .4s; }
+    a { color: inherit; }
+    .top { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 14px 28px; transition: background .3s, padding .3s; }
+    .top.is-scrolled { background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); padding: 8px 28px; border-bottom: 1px solid var(--line); }
+    .top > a { text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .top nav { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+    .top nav a { font-size: 12px; color: var(--muted); padding: 4px 9px; border-radius: 6px; text-decoration: none; }
+    .top nav a:hover { color: var(--text); background: var(--panel); }
+    header.hero { min-height: 80vh; display: grid; place-content: center; text-align: center; padding: 120px 24px 60px; }
+    h1 { font: 400 clamp(48px, 8vw, 110px)/1 'Instrument Serif', serif; }
+    h1 em { color: var(--accent); }
+    header.hero p { color: var(--muted); margin-top: 16px; }
+    .group { padding: 70px 32px 10px; font: 400 64px 'Instrument Serif', serif; color: var(--accent); border-top: 1px solid var(--line); }
+    section.demo { padding: 70px 32px; border-top: 1px solid var(--line); scroll-margin-top: 50px; }
+    .demo > h2 { font: 400 38px 'Instrument Serif', serif; }
+    .demo > code { display: inline-block; margin: 6px 0 32px; color: var(--accent); font: 13px ui-monospace, Consolas, monospace; }
+    .row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .box { padding: 34px 22px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); text-align: center; font-weight: 600; }
+    .big { font: 400 clamp(40px, 6vw, 80px)/1.1 'Instrument Serif', serif; }
+    .big em { color: var(--accent); }
+    .heavy { font: 800 clamp(40px, 7vw, 96px)/1 Inter, sans-serif; letter-spacing: -.04em; }
+    .num { font: 400 72px/1 'Instrument Serif', serif; color: var(--accent); }
+    .btn { display: inline-block; padding: 18px 36px; border-radius: 999px; background: var(--accent); color: #1a1408; font: 600 15px Inter, sans-serif; text-decoration: none; border: 0; cursor: pointer; }
+    .card { height: 260px; border-radius: 18px; display: grid; place-items: center; font-weight: 600; border: 1px solid var(--line); background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgba(232,194,122,.3), transparent 60%), var(--panel); }
+    .pwrap { height: 380px; overflow: hidden; border-radius: 18px; position: relative; }
+    .pimg { position: absolute; inset: -20% 0; background: linear-gradient(160deg, #7c5cff, #22d3ee 50%, #e8c27a); }
+    .pwrap span { position: absolute; inset: 0; display: grid; place-items: center; font: 400 48px 'Instrument Serif', serif; color: #fff; }
+    .zimg { position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, #ffe3b0 0 8%, transparent 9%), linear-gradient(180deg, #f0a36f 0 50%, #2f6f8f 50%); }
+    .mq span { font: 400 48px 'Instrument Serif', serif; padding: 0 30px; white-space: nowrap; }
+    .tabbar { display: flex; gap: 8px; margin-bottom: 20px; }
+    .tabbar button { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--muted); cursor: pointer; font: inherit; }
+    .tabbar button.is-active { background: var(--accent); color: #1a1408; }
+    [data-carousel] blockquote { font: italic 400 36px/1.3 'Instrument Serif', serif; }
+    .cd { display: flex; gap: 24px; }
+    .cd div { text-align: center; } .cd b { display: block; font: 400 64px/1 'Instrument Serif', serif; color: var(--accent); } .cd span { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+    .hscroll__track { gap: 20px; padding: 0 32px; }
+    .hcard { flex: 0 0 380px; height: 60vh; border-radius: 18px; display: grid; place-items: center; font: 400 40px 'Instrument Serif', serif; }
+    .zone { display: flex; gap: 16px; flex-wrap: wrap; }
+    .zone a, .zone button { padding: 40px 50px; border-radius: 14px; background: var(--panel); border: 1px solid var(--line); text-decoration: none; color: var(--text); font: 600 15px Inter, sans-serif; cursor: pointer; }
+    .progress { background: var(--accent); }
+    .scard { min-height: 300px; border-radius: 24px; padding: 40px; margin-bottom: 30px; display: grid; place-items: center; font: 400 60px 'Instrument Serif', serif; color: #111; }
+    .spot { height: 320px; border-radius: 22px; border: 1px solid var(--line); display: grid; place-items: center; background: var(--panel); --spot: rgba(232,194,122,.25); }
+    .trailzone { height: 70vh; border-radius: 22px; border: 1px dashed var(--line); display: grid; place-items: center; color: var(--muted); }
+    .trail-item { width: 160px; height: 200px; border-radius: 10px; }
+    .partzone { height: 60vh; border-radius: 22px; background: #05050c; display: grid; place-items: center; overflow: hidden; color: #fff; }
+    .partzone h3 { position: relative; z-index: 1; font: 400 48px 'Instrument Serif', serif; }
+    .cmp { max-width: 640px; aspect-ratio: 16 / 10; border-radius: 18px; }
+    .cmp > div { display: grid; place-items: center; font: 400 44px 'Instrument Serif', serif; color: #fff; }
+    .shapes { display: flex; gap: 30px; align-items: center; flex-wrap: wrap; }
+    .shape { width: 120px; height: 120px; border-radius: 26px; background: var(--accent); display: grid; place-items: center; color: #1a1408; font-weight: 800; }
+    .dot { display: inline-block; width: 14px; height: 14px; border-radius: 50%; background: currentColor; }
+    .loader-demo { height: 300px; border-radius: 20px; background: #111; color: #f1efe9; display: flex; justify-content: space-between; align-items: flex-end; padding: 24px; position: relative; overflow: hidden; }
+    .loader-demo b { font: 300 120px/.8 Inter, sans-serif; letter-spacing: -.05em; }
+    .loader-demo .wipe { position: absolute; inset: 0; background: var(--accent); clip-path: inset(0 0 100% 0); transition: clip-path 1s cubic-bezier(.2,.7,.2,1); display: grid; place-items: center; color: #1a1408; font: 400 40px 'Instrument Serif', serif; }
+    .loader-demo.done .wipe { clip-path: inset(0 0 0 0); }
+  </style>
+</head>
+<body data-cursor>
+  <div class="progress" data-scroll-progress></div>
+  <div class="top" data-header>
+    <a href="index.html">← Template Vault</a>
+    <nav>
+      <a href="#g-entrances">Entrances</a><a href="#g-text">Text</a><a href="#g-scroll">Scroll</a><a href="#g-mouse">Mouse</a><a href="#g-interactive">Interactive</a><a href="#g-ambient">Ambient</a>
+    </nav>
+  </div>
+
+  <header class="hero">
+    <h1 data-split>The <em>animation</em> kit, live.</h1>
+    <p data-reveal data-delay="500">42 effects. Scroll down. Every one is a single HTML attribute or class.</p>
+  </header>
+
+  <!-- ============ ENTRANCES ============ -->
+  <div class="group" id="g-entrances">Entrances</div>
+  <section class="demo" id="reveal">
+    <h2>Scroll reveal</h2><code>data-reveal="up | down | left | right | zoom | blur | fade | clip"</code>
+    <div class="row">
+      <div class="box" data-reveal="up">up</div><div class="box" data-reveal="left">left</div><div class="box" data-reveal="right">right</div>
+      <div class="box" data-reveal="zoom">zoom</div><div class="box" data-reveal="blur">blur</div><div class="box" data-reveal="clip">clip</div>
+    </div>
+  </section>
+  <section class="demo" id="stagger">
+    <h2>Staggered children</h2><code>data-stagger="90"</code>
+    <div class="row" data-stagger><div class="box">1</div><div class="box">2</div><div class="box">3</div><div class="box">4</div><div class="box">5</div></div>
+  </section>
+  <section class="demo" id="bounce">
+    <h2>Bounce in</h2><code>class="fx-bounce-in" style="--d:.2s"</code>
+    <div class="shapes" id="bounce-row"><div class="shape fx-bounce-in">NEW</div><div class="shape fx-bounce-in" style="--d:.15s">HOT</div><div class="shape fx-bounce-in" style="--d:.3s">50%</div></div>
+    <p style="margin-top:20px"><button class="btn" onclick="const r=document.getElementById('bounce-row');r.innerHTML=r.innerHTML">Replay</button></p>
+  </section>
+  <section class="demo" id="preloader">
+    <h2>Intro loader</h2><code>data-preloader="1500" + data-preloader-count</code>
+    <p style="color:var(--muted);margin-bottom:20px">Runs once when a page opens (see the Folio template). Here's a mini version:</p>
+    <div class="loader-demo" id="ld"><span>Your Name</span><b id="ldn">0</b><div class="wipe">Welcome</div></div>
+    <p style="margin-top:20px"><button class="btn" onclick="runLoader()">Play</button></p>
+  </section>
+
+  <!-- ============ TEXT ============ -->
+  <div class="group" id="g-text">Text</div>
+  <section class="demo" id="split">
+    <h2>Split-text headline</h2><code>data-split</code>
+    <p class="big" data-split>Words that rise <em>one by one</em> from a hidden mask.</p>
+  </section>
+  <section class="demo" id="chars">
+    <h2>Letter by letter</h2><code>data-split="chars"</code>
+    <p class="heavy" data-split="chars">EVERY LETTER COUNTS</p>
+  </section>
+  <section class="demo" id="scramble">
+    <h2>Scramble / decode</h2><code>data-scramble  ·  data-scramble="hover"</code>
+    <p class="heavy" data-scramble>SYSTEM ONLINE</p>
+    <div class="zone" style="margin-top:24px"><a href="#scramble" data-scramble="hover">HOVER ME</a><a href="#scramble" data-scramble="hover">FEATURES</a><a href="#scramble" data-scramble="hover">PRICING</a></div>
+  </section>
+  <section class="demo" id="typed">
+    <h2>Typed words</h2><code>data-typed="one|two|three"</code>
+    <p class="big">We build sites that <em data-typed="convert|delight|load fast|win awards"></em></p>
+  </section>
+  <section class="demo" id="rotate">
+    <h2>Flipping words</h2><code>data-rotate="one|two|three"</code>
+    <p class="big">Websites that <em data-rotate="slap|convert|sell|shine" data-interval="1600"></em></p>
+  </section>
+  <section class="demo" id="scrub">
+    <h2>Scroll-lit text</h2><code>data-scrub</code>
+    <p class="big" data-scrub>Keep scrolling and watch each word light up as you read it, one by one, at exactly your pace. It turns a paragraph into a moment.</p>
+  </section>
+  <section class="demo" id="gradient">
+    <h2>Animated gradient text</h2><code>class="fx-gradient-text"</code>
+    <p class="heavy fx-gradient-text">Colour that flows</p>
+  </section>
+  <section class="demo" id="glitch">
+    <h2>Glitch on hover</h2><code>class="fx-glitch" data-text="…"</code>
+    <p class="heavy fx-glitch" data-text="HOVER TO GLITCH">HOVER TO GLITCH</p>
+  </section>
+  <section class="demo" id="count">
+    <h2>Counter</h2><code>data-count="2400" data-suffix="+"</code>
+    <div class="row"><div class="box"><div class="num" data-count="2400" data-suffix="+"></div>members</div><div class="box"><div class="num" data-count="99.9" data-suffix="%"></div>uptime</div><div class="box"><div class="num" data-count="48" data-prefix="$" data-suffix="k"></div>raised</div></div>
+  </section>
+
+  <!-- ============ SCROLL ============ -->
+  <div class="group" id="g-scroll">Scroll</div>
+  <section class="demo" id="parallax">
+    <h2>Parallax</h2><code>data-parallax="0.2"</code>
+    <div class="pwrap"><div class="pimg" data-parallax="0.2"></div><span>Scroll past me</span></div>
+  </section>
+  <section class="demo" id="expand" style="padding-inline:0">
+    <h2 style="padding:0 32px">Expand on scroll</h2><code style="margin-left:32px">data-expand="12"</code>
+    <div data-expand="12" style="height:80vh;background:linear-gradient(160deg,#e07a5f,#2f6f8f);display:grid;place-items:center;color:#fff;font:400 48px 'Instrument Serif',serif">I grow to full width</div>
+  </section>
+  <section class="demo" id="zoom">
+    <h2>Zoom on scroll</h2><code>data-zoom="1.3"</code>
+    <div class="pwrap"><div class="zimg" data-zoom="1.3"></div><span>Slowly zooming out</span></div>
+  </section>
+  <section class="demo" id="stack">
+    <h2>Stacking cards</h2><code>data-stack="90"</code>
+    <div data-stack="90">
+      <div class="scard" style="background:#e8c27a">One</div><div class="scard" style="background:#8fb8ff">Two</div><div class="scard" style="background:#a5d6a7">Three</div><div class="scard" style="background:#f4a3c0">Four</div>
+    </div>
+  </section>
+  <section class="demo" id="hscroll" style="padding-inline:0">
+    <h2 style="padding: 0 32px">Horizontal scroll</h2><code style="margin-left:32px">data-hscroll</code>
+    <div data-hscroll>
+      <div class="hscroll__sticky"><div class="hscroll__track">
+        <div class="hcard" style="background:#7c5cff">One</div><div class="hcard" style="background:#22d3ee;color:#000">Two</div><div class="hcard" style="background:#e8c27a;color:#000">Three</div><div class="hcard" style="background:#f472b6;color:#000">Four</div><div class="hcard" style="background:#14b8a6;color:#000">Five</div>
+      </div></div>
+    </div>
+  </section>
+  <section class="demo" id="skew">
+    <h2>Skew on scroll speed</h2><code>data-skew</code>
+    <p style="color:var(--muted);margin-bottom:20px">Scroll fast up and down past this.</p>
+    <div data-skew><div class="mq" data-marquee="20"><span>FAST</span><span>✦</span><span>SMOOTH</span><span>✦</span><span>PHYSICAL</span><span>✦</span></div></div>
+  </section>
+  <section class="demo" id="draw">
+    <h2>SVG line drawing</h2><code>&lt;svg data-draw&gt;</code>
+    <svg viewBox="0 0 600 140" data-draw style="width:100%;max-width:800px;fill:none;stroke:#e8c27a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round">
+      <path d="M0 70 H180 L200 30 L222 120 L246 40 L262 70 H600"/>
+      <circle cx="420" cy="70" r="40"/><path d="M400 70 L415 85 L442 55"/>
+    </svg>
+  </section>
+  <section class="demo" id="progress">
+    <h2>Scroll progress bar</h2><code>data-scroll-progress</code>
+    <p style="color:var(--muted)">See the gold bar at the very top of this page.</p>
+  </section>
+  <section class="demo" id="header">
+    <h2>Shrinking header</h2><code>data-header → .is-scrolled</code>
+    <p style="color:var(--muted)">This page's top bar gained a background once you scrolled.</p>
+  </section>
+
+  <!-- ============ MOUSE ============ -->
+  <div class="group" id="g-mouse">Mouse</div>
+  <section class="demo" id="magnetic">
+    <h2>Magnetic button</h2><code>data-magnetic="0.4"</code>
+    <a href="#magnetic" class="btn" data-magnetic="0.4">Hover me</a>
+  </section>
+  <section class="demo" id="tilt">
+    <h2>3D tilt + glare</h2><code>data-tilt="12"</code>
+    <div class="row"><div class="card" data-tilt="12">Move your mouse</div><div class="card" data-tilt="20">Stronger tilt</div></div>
+  </section>
+  <section class="demo" id="spotlight">
+    <h2>Cursor spotlight</h2><code>data-spotlight</code>
+    <div class="spot" data-spotlight>Move your cursor around in here</div>
+  </section>
+  <section class="demo" id="trail">
+    <h2>Image trail</h2><code>data-trail="80" + .trail-item</code>
+    <div class="trailzone" data-trail="70">
+      <div class="trail-item" style="background:linear-gradient(135deg,#7c5cff,#22d3ee)"></div><div class="trail-item" style="background:linear-gradient(135deg,#e8c27a,#e07a5f)"></div><div class="trail-item" style="background:linear-gradient(135deg,#f472b6,#7c5cff)"></div><div class="trail-item" style="background:linear-gradient(135deg,#14b8a6,#a5d6a7)"></div><div class="trail-item" style="background:linear-gradient(135deg,#ffd23f,#ff5d8f)"></div><div class="trail-item" style="background:linear-gradient(135deg,#3a86ff,#06d6a0)"></div>
+      <span>Move your cursor through here</span>
+    </div>
+  </section>
+  <section class="demo" id="cursor">
+    <h2>Custom cursor</h2><code>&lt;body data-cursor&gt;  +  data-cursor-text="View"</code>
+    <div class="zone"><a href="#cursor">Plain link (ring grows)</a><a href="#cursor" data-cursor-text="View">With label</a><a href="#cursor" data-cursor-text="Play">Video tile</a></div>
+  </section>
+  <section class="demo" id="particles">
+    <h2>Particle network</h2><code>data-particles="#8b7bff"</code>
+    <div class="partzone" data-particles="#8b7bff"><h3>Move your mouse through the dots</h3></div>
+  </section>
+
+  <!-- ============ INTERACTIVE ============ -->
+  <div class="group" id="g-interactive">Interactive</div>
+  <section class="demo" id="ripple">
+    <h2>Click ripple</h2><code>data-ripple</code>
+    <div class="zone"><button data-ripple>Click anywhere on me</button><button data-ripple style="background:var(--accent);color:#1a1408">And me</button></div>
+  </section>
+  <section class="demo" id="confetti">
+    <h2>Confetti burst</h2><code>data-confetti</code>
+    <button class="btn" data-confetti>Celebrate 🎉</button>
+  </section>
+  <section class="demo" id="compare">
+    <h2>Before / after slider</h2><code>data-compare="50"</code>
+    <div class="cmp" data-compare="50">
+      <div style="background:linear-gradient(135deg,#55534f,#2a2927)">Before</div>
+      <div style="background:linear-gradient(135deg,#e8c27a,#e07a5f)">After</div>
+    </div>
+  </section>
+  <section class="demo" id="tabs" data-tabs>
+    <h2>Tabs</h2><code>data-tabs / data-tab / data-panel</code>
+    <div class="tabbar"><button data-tab="a">Brunch</button><button data-tab="b">Dinner</button><button data-tab="c">Drinks</button></div>
+    <div data-panel="a" class="box">Brunch panel</div><div data-panel="b" class="box">Dinner panel</div><div data-panel="c" class="box">Drinks panel</div>
+  </section>
+  <section class="demo" id="carousel">
+    <h2>Fade carousel</h2><code>data-carousel="3500"</code>
+    <div data-carousel="3500"><blockquote>"The best agency we've worked with."</blockquote><blockquote>"Our conversions doubled in a month."</blockquote><blockquote>"Beautiful, fast, and on budget."</blockquote></div>
+  </section>
+  <section class="demo" id="countdown">
+    <h2>Countdown</h2><code>data-countdown="2027-01-01T00:00"</code>
+    <div class="cd" data-countdown="2027-01-01T00:00"><div><b data-unit="d"></b><span>days</span></div><div><b data-unit="h"></b><span>hours</span></div><div><b data-unit="m"></b><span>min</span></div><div><b data-unit="s"></b><span>sec</span></div></div>
+  </section>
+  <section class="demo" id="theme">
+    <h2>Dark / light toggle</h2><code>data-theme-toggle</code>
+    <button class="btn" data-theme-toggle>Toggle this page's theme</button>
+  </section>
+  <section class="demo" id="marquee">
+    <h2>Infinite marquee</h2><code>data-marquee="25"  (+ data-marquee-reverse)</code>
+    <div class="mq" data-marquee="25"><span>Brand</span><span>✦</span><span>Web</span><span>✦</span><span>Motion</span><span>✦</span><span>Strategy</span><span>✦</span></div>
+    <div class="mq" data-marquee="30" data-marquee-reverse><span>Strategy</span><span>✦</span><span>Motion</span><span>✦</span><span>Web</span><span>✦</span><span>Brand</span><span>✦</span></div>
+  </section>
+
+  <!-- ============ AMBIENT ============ -->
+  <div class="group" id="g-ambient">Ambient</div>
+  <section class="demo" id="float">
+    <h2>Floating</h2><code>class="fx-float"</code>
+    <div class="shapes"><div class="shape fx-float">☺</div><div class="shape fx-float">★</div><div class="shape fx-float">♥</div></div>
+  </section>
+  <section class="demo" id="blob">
+    <h2>Morphing blob</h2><code>class="fx-blob"</code>
+    <div class="fx-blob" style="width:280px;height:280px;background:linear-gradient(135deg,#e8c27a,#f472b6)"></div>
+  </section>
+  <section class="demo" id="spin">
+    <h2>Slow spin</h2><code>class="fx-spin"</code>
+    <div class="shape fx-spin" style="border-radius:50%">★</div>
+  </section>
+  <section class="demo" id="shine">
+    <h2>Shine sweep</h2><code>class="fx-shine"</code>
+    <a href="#shine" class="btn fx-shine">Hover for shine</a>
+  </section>
+  <section class="demo" id="pulse">
+    <h2>Pulse ring</h2><code>class="fx-pulse"</code>
+    <p style="font-size:20px"><i class="dot fx-pulse" style="color:#22c55e"></i>&nbsp; Live now</p>
+  </section>
+  <section class="demo" id="underline">
+    <h2>Hover underline</h2><code>class="fx-underline"</code>
+    <p class="big"><a href="#underline" class="fx-underline" style="text-decoration:none">Hover this link</a></p>
+  </section>
+
+  <script src="templates/_shared/motion.js"></script>
+  <script>
+    function runLoader() {
+      const box = document.getElementById('ld'), n = document.getElementById('ldn');
+      box.classList.remove('done');
+      const t0 = performance.now();
+      (function tick(t) {
+        const p = Math.min((t - t0) / 1400, 1);
+        n.textContent = Math.round(p * 100);
+        if (p < 1) requestAnimationFrame(tick); else box.classList.add('done');
+      })(t0);
+    }
+  </script>
+</body>
+</html>

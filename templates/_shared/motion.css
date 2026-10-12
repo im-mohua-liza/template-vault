@@ -1,0 +1,191 @@
+/* ==========================================================================
+   Motion Kit — attribute-driven animations shared by every template.
+   Add the attribute in HTML, motion.js does the rest. See animations.html.
+   ========================================================================== */
+
+:root {
+  --ease-out: cubic-bezier(.2, .7, .2, 1);
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1);
+}
+
+/* ---- Scroll reveal: data-reveal="up|down|left|right|zoom|blur|fade" ---- */
+.motion [data-reveal] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s var(--ease-out), transform .9s var(--ease-out), filter .9s var(--ease-out), clip-path 1.1s var(--ease-out);
+  transition-delay: var(--d, 0s);
+}
+.motion [data-reveal="down"]  { transform: translateY(-40px); }
+.motion [data-reveal="left"]  { transform: translateX(-60px); }
+.motion [data-reveal="right"] { transform: translateX(60px); }
+.motion [data-reveal="zoom"]  { transform: scale(.88); }
+.motion [data-reveal="blur"]  { transform: none; filter: blur(14px); }
+.motion [data-reveal="fade"]  { transform: none; }
+.motion [data-reveal="clip"]  { opacity: 1; transform: none; clip-path: inset(100% 0 0 0); }
+.motion [data-reveal].is-in   { opacity: 1; transform: none; filter: none; clip-path: inset(0 0 0 0); }
+
+/* ---- Staggered children: data-stagger on the parent ---- */
+.motion [data-stagger] > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * var(--stagger, 90ms));
+}
+.motion [data-stagger].is-in > * { opacity: 1; transform: none; }
+
+/* ---- Split text: data-split rises word by word ---- */
+.split-w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .1em .08em .04em; margin: 0 -.1em -.08em -.04em; }
+.split-w > span { display: inline-block; }
+.motion [data-split] .split-w > span {
+  transform: translateY(110%) rotate(4deg);
+  transition: transform 1s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 60ms + var(--d, 0s));
+}
+.motion [data-split].is-in .split-w > span { transform: none; }
+
+/* ---- Magnetic + tilt ---- */
+[data-magnetic] { transition: transform .35s var(--ease-out); will-change: transform; }
+[data-tilt] { transition: transform .5s var(--ease-out); transform-style: preserve-3d; will-change: transform; }
+[data-tilt].is-tilting { transition: transform .08s linear; }
+
+/* ---- Marquee: data-marquee="seconds" ---- */
+.marquee { overflow: hidden; display: flex; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.marquee__track { display: flex; flex-shrink: 0; width: max-content; animation: mk-marquee var(--speed, 30s) linear infinite; }
+.marquee--reverse .marquee__track { animation-direction: reverse; }
+.marquee:hover .marquee__track { animation-play-state: var(--hover-pause, running); }
+@keyframes mk-marquee { to { transform: translateX(-50%); } }
+
+/* ---- Typed words: data-typed="one|two|three" ---- */
+[data-typed]::after { content: "|"; margin-left: .05em; font-weight: 300; animation: mk-blink 1s steps(1) infinite; }
+@keyframes mk-blink { 50% { opacity: 0; } }
+
+/* ---- Scroll progress bar ---- */
+[data-scroll-progress] { position: fixed; inset: 0 0 auto 0; height: 3px; transform-origin: 0 50%; transform: scaleX(0); z-index: 1000; }
+
+/* ---- Carousel: data-carousel="ms" (children fade in turn) ---- */
+[data-carousel] { display: grid; }
+[data-carousel] > * { grid-area: 1 / 1; opacity: 0; transform: translateY(14px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); pointer-events: none; }
+[data-carousel] > .is-active { opacity: 1; transform: none; pointer-events: auto; }
+.carousel-dots { display: flex; gap: 8px; margin-top: 24px; }
+.carousel-dots button { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: currentColor; opacity: .25; cursor: pointer; transition: width .4s var(--ease-out), opacity .4s; }
+.carousel-dots button.is-active { width: 28px; opacity: 1; }
+
+/* ---- Tabs: data-tabs wrapper, [data-tab] buttons, [data-panel] panels ---- */
+[data-panel] { display: none; }
+[data-panel].is-active { display: block; animation: mk-fade-up .6s var(--ease-out); }
+@keyframes mk-fade-up { from { opacity: 0; transform: translateY(16px); } }
+
+/* ---- Horizontal scroll section: data-hscroll ---- */
+[data-hscroll] { position: relative; }
+.hscroll__sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; }
+.hscroll__track { display: flex; will-change: transform; }
+
+/* ---- Custom cursor: <body data-cursor> ---- */
+.mk-cursor, .mk-cursor-ring { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; border-radius: 50%; transform: translate(-50%, -50%); }
+.mk-cursor { width: 8px; height: 8px; background: var(--cursor, #fff); mix-blend-mode: difference; }
+.mk-cursor-ring { width: 40px; height: 40px; border: 1px solid var(--cursor, #fff); mix-blend-mode: difference; transition: width .35s var(--ease-out), height .35s var(--ease-out), background .35s; display: grid; place-items: center; font: 600 11px/1 system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #000; }
+.mk-cursor-ring.is-hover { width: 70px; height: 70px; background: var(--cursor, #fff); }
+.mk-cursor-ring.has-text { width: 96px; height: 96px; background: var(--cursor, #fff); mix-blend-mode: normal; }
+@media (hover: none) { .mk-cursor, .mk-cursor-ring { display: none; } }
+
+/* ==========================================================================
+   v2 effects
+   ========================================================================== */
+
+/* ---- Letter-by-letter split: data-split="chars" ---- */
+.motion [data-split="chars"] .split-w > span { transition-delay: calc(var(--i, 0) * 28ms + var(--d, 0s)); transform: translateY(110%); }
+
+/* ---- Scramble text keeps its width steady ---- */
+[data-scramble] { font-variant-numeric: tabular-nums; }
+
+/* ---- Rotating words: data-rotate="a|b|c" ---- */
+.rotate-words { display: inline-grid; vertical-align: bottom; overflow: hidden; padding-bottom: .1em; margin-bottom: -.1em; }
+.rotate-words > span { grid-area: 1 / 1; transform: translateY(105%); transition: transform .7s var(--ease-out); white-space: nowrap; }
+.rotate-words > span.is-active { transform: none; }
+.rotate-words > span.is-out { transform: translateY(-105%); }
+
+/* ---- SVG line drawing: data-draw ---- */
+.draw-path { transition: stroke-dashoffset 2.2s var(--ease-out); transition-delay: var(--d, 0s); }
+[data-draw].is-in .draw-path { stroke-dashoffset: 0 !important; }
+
+/* ---- Scroll-lit words: data-scrub ---- */
+.scrub-w { opacity: var(--scrub-dim, .18); transition: opacity .4s; }
+.scrub-w.is-lit { opacity: 1; }
+
+/* ---- Spotlight: data-spotlight (use --sx/--sy in your own CSS too) ---- */
+[data-spotlight] { position: relative; isolation: isolate; }
+[data-spotlight]::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(var(--spot-size, 520px) circle at var(--sx, 50%) var(--sy, 50%), var(--spot, rgba(255, 255, 255, .08)), transparent 65%); }
+
+/* ---- Ripple: data-ripple ---- */
+[data-ripple] { position: relative; overflow: hidden; }
+.mk-ripple { position: absolute; border-radius: 50%; background: currentColor; opacity: .28; transform: scale(0); animation: mk-ripple .75s var(--ease-out) forwards; pointer-events: none; }
+@keyframes mk-ripple { to { transform: scale(1); opacity: 0; } }
+
+/* ---- Confetti pieces ---- */
+.mk-confetti { position: fixed; z-index: 9998; width: 9px; height: 13px; pointer-events: none; }
+
+/* ---- Particles canvas: data-particles ---- */
+[data-particles] { position: relative; }
+.mk-particles { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+
+/* ---- Sticky stacking cards: data-stack="topOffsetPx" ---- */
+[data-stack] > * { position: sticky; transform-origin: 50% 0; will-change: transform; }
+
+/* ---- Image trail: data-trail with .trail-item children ---- */
+[data-trail] { position: relative; overflow: hidden; }
+.trail-item { position: absolute; top: 0; left: 0; pointer-events: none; opacity: 0; transform: translate(-50%, -50%) scale(.6); }
+.trail-item.is-on { animation: mk-trail 1.1s var(--ease-out) forwards; }
+@keyframes mk-trail { 0% { opacity: 1; transform: translate(-50%, -50%) scale(.6); } 25% { transform: translate(-50%, -50%) scale(1); } 70% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -40%) scale(.95); } }
+
+/* ---- Before / after: data-compare with two children ---- */
+.compare { position: relative; overflow: hidden; display: grid; --pos: 50%; user-select: none; }
+.compare > :not(input):not(.compare__handle) { grid-area: 1 / 1; }
+.compare > :nth-child(2) { clip-path: inset(0 0 0 var(--pos)); }
+.compare__handle { position: absolute; top: 0; bottom: 0; left: var(--pos); width: 2px; background: #fff; transform: translateX(-50%); pointer-events: none; z-index: 2; }
+.compare__handle::after { content: "‹ ›"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: #fff; color: #111; display: grid; place-items: center; font: 700 16px/1 system-ui; box-shadow: 0 6px 20px rgba(0,0,0,.25); }
+.compare input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 3; margin: 0; }
+
+/* ---- Preloader: data-preloader ---- */
+[data-preloader] { position: fixed; inset: 0; z-index: 3000; transition: clip-path 1.1s var(--ease-out) .15s; clip-path: inset(0 0 0 0); }
+[data-preloader].is-done { clip-path: inset(0 0 100% 0); }
+
+/* ---- Utility effects (just add the class) ---- */
+.fx-float { animation: fx-float 6s ease-in-out infinite; }
+.fx-float:nth-child(2n) { animation-delay: -2s; animation-duration: 7s; }
+.fx-float:nth-child(3n) { animation-delay: -4s; animation-duration: 8s; }
+@keyframes fx-float { 50% { transform: translateY(-14px) rotate(2deg); } }
+
+.fx-spin { animation: fx-spin 20s linear infinite; }
+@keyframes fx-spin { to { transform: rotate(360deg); } }
+
+.fx-shine { position: relative; overflow: hidden; }
+.fx-shine::after { content: ""; position: absolute; top: 0; bottom: 0; left: -60%; width: 40%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.45), transparent); transform: skewX(-20deg); transition: left .8s var(--ease-out); pointer-events: none; }
+.fx-shine:hover::after { left: 130%; }
+
+.fx-gradient-text { background: linear-gradient(90deg, var(--g1, #7c5cff), var(--g2, #22d3ee), var(--g3, #f472b6), var(--g1, #7c5cff)); background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: fx-grad 6s linear infinite; }
+@keyframes fx-grad { to { background-position: 300% 0; } }
+
+.fx-blob { border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%; animation: fx-blob 12s ease-in-out infinite; }
+@keyframes fx-blob { 33% { border-radius: 70% 30% 46% 54% / 30% 39% 61% 70%; } 66% { border-radius: 28% 72% 35% 65% / 59% 31% 69% 41%; } }
+
+.fx-glitch { position: relative; }
+.fx-glitch::before, .fx-glitch::after { content: attr(data-text); position: absolute; inset: 0; opacity: 0; pointer-events: none; }
+.fx-glitch:hover::before { opacity: .8; color: #0ff; animation: fx-glitch .35s steps(2) infinite; }
+.fx-glitch:hover::after { opacity: .8; color: #f0f; animation: fx-glitch .35s steps(2) infinite reverse; }
+@keyframes fx-glitch { 0% { clip-path: inset(10% 0 60% 0); transform: translate(-3px, 1px); } 50% { clip-path: inset(55% 0 15% 0); transform: translate(3px, -1px); } 100% { clip-path: inset(30% 0 40% 0); transform: translate(-2px, 2px); } }
+
+.fx-underline { background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat; transition: background-size .45s var(--ease-out); }
+.fx-underline:hover { background-size: 100% 2px; }
+
+.fx-pulse { position: relative; }
+.fx-pulse::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: 0 0 0 0 currentColor; animation: fx-pulse 2s infinite; pointer-events: none; }
+@keyframes fx-pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, currentColor 45%, transparent); } 100% { box-shadow: 0 0 0 18px transparent; } }
+
+.fx-bounce-in { animation: fx-bounce-in .9s var(--ease-spring) both; animation-delay: var(--d, 0s); }
+@keyframes fx-bounce-in { from { opacity: 0; transform: scale(.4) rotate(-8deg); } }
+
+/* ---- Respect reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .motion [data-reveal], .motion [data-stagger] > *, .motion [data-split] .split-w > span { opacity: 1; transform: none; filter: none; clip-path: none; }
+}

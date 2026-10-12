@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harbor House — A boutique hotel by the sea</title>
+  <meta name="description" content="Twenty-two rooms on a quiet harbour. Slow mornings, salt air and very good breakfasts.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav" data-header>
+    <nav class="nav__l"><a href="#rooms">Rooms</a><a href="#experiences">Experiences</a></nav>
+    <a href="#" class="logo">Harbor<small>House · Est. 1921</small></a>
+    <nav class="nav__r"><a href="#location">Location</a><a href="#book" class="btn btn--sm">Book a stay</a></nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__sky" aria-hidden="true">
+        <span class="sun"></span>
+        <span class="sea" data-parallax="-0.05"></span>
+        <span class="boat fx-float">⛵</span>
+      </div>
+      <div class="hero__text">
+        <p class="eyebrow" data-reveal>A boutique hotel by the sea</p>
+        <h1 data-split>Wake up to the <em>tide</em>.</h1>
+      </div>
+      <!-- Booking bar -->
+      <form class="bookbar" data-reveal data-delay="600" onsubmit="event.preventDefault(); location.hash='book'">
+        <label><small>Check in</small><input type="date" aria-label="Check in"></label>
+        <label><small>Check out</small><input type="date" aria-label="Check out"></label>
+        <label><small>Guests</small><select aria-label="Guests"><option>2 adults</option><option>1 adult</option><option>2 adults, 1 child</option><option>4 adults</option></select></label>
+        <button class="btn" data-ripple>Check availability</button>
+      </form>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p data-scrub>Twenty-two rooms on a quiet harbour, a kitchen that cooks what the boats bring in, and nothing on the schedule but the sea. Welcome to Harbor House.</p>
+    </section>
+
+    <!-- EXPANDING image -->
+    <section class="wide">
+      <div class="wide__img" data-expand="14"><div class="wide__scene" data-zoom="1.2"></div><span>The terrace at golden hour</span></div>
+    </section>
+
+    <!-- ROOMS (stacking cards) -->
+    <section class="rooms" id="rooms">
+      <div class="head"><p class="eyebrow" data-reveal>Stay</p><h2 data-split>Rooms &amp; suites</h2></div>
+      <div class="stack" data-stack="90">
+        <article class="room"><div class="room__img r1"></div><div class="room__info"><span>01</span><h3>Harbour Room</h3><p>Linen sheets, a deep bath and windows full of boats.</p><ul><li>28 m²</li><li>King bed</li><li>Sea view</li></ul><div class="room__foot"><b>from $240<small>/night</small></b><a href="#book" class="btn btn--line">Reserve</a></div></div></article>
+        <article class="room"><div class="room__img r2"></div><div class="room__info"><span>02</span><h3>Lighthouse Suite</h3><p>A round room in the old tower with a 270° view of the coast.</p><ul><li>45 m²</li><li>Living area</li><li>Balcony</li></ul><div class="room__foot"><b>from $420<small>/night</small></b><a href="#book" class="btn btn--line">Reserve</a></div></div></article>
+        <article class="room"><div class="room__img r3"></div><div class="room__info"><span>03</span><h3>Garden Cottage</h3><p>A private cottage for families, with its own fig tree.</p><ul><li>60 m²</li><li>2 bedrooms</li><li>Garden</li></ul><div class="room__foot"><b>from $510<small>/night</small></b><a href="#book" class="btn btn--line">Reserve</a></div></div></article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCES (skews with scroll speed) -->
+    <section class="exp" id="experiences">
+      <div class="head head--center"><p class="eyebrow" data-reveal>Experiences</p><h2 data-split>Days well spent</h2></div>
+      <div class="exp__grid" data-skew>
+        <article class="exp__card" data-reveal><div class="e1"></div><h3>Sunrise sailing</h3><p>Two hours on the water with our skipper, coffee included.</p></article>
+        <article class="exp__card" data-reveal data-delay="120"><div class="e2"></div><h3>Sea sauna</h3><p>Wood-fired sauna on the jetty. Jump in, if you dare.</p></article>
+        <article class="exp__card" data-reveal data-delay="240"><div class="e3"></div><h3>Harbour dinners</h3><p>Seven courses from the morning's catch.</p></article>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="location" id="location">
+      <div class="map" data-reveal="zoom" aria-hidden="true">
+        <svg viewBox="0 0 400 300" data-draw><path class="coast" d="M0 210 C60 190 90 230 140 200 S220 140 260 170 S340 230 400 190"/><path class="route" d="M60 80 C120 60 160 130 210 150 S260 160 268 168"/><circle cx="268" cy="168" r="7" class="pin"/></svg>
+        <span class="map__label">Harbor House</span>
+      </div>
+      <div class="location__text">
+        <p class="eyebrow" data-reveal>Getting here</p>
+        <h2 data-split>Two hours from the city, a world away</h2>
+        <ul data-stagger><li><b>By train</b> 1h 50m to Port Ellis, we'll collect you</li><li><b>By car</b> Free parking behind the hotel</li><li><b>By boat</b> Yes, really. Moorings available</li></ul>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <div class="score" data-reveal><b data-count="9.7"></b><span>Guest rating<br>from 2,400 reviews</span></div>
+      <div data-carousel="6000" class="reviews__c">
+        <blockquote>"The kind of place you plan your next trip around. Faultless."<cite>— Condé Nast Traveller</cite></blockquote>
+        <blockquote>"We came for two nights and stayed for five. The breakfasts alone…"<cite>— Hannah &amp; Ollie</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section class="book" id="book">
+      <h2 data-split>Your table by the window is <em>waiting</em>.</h2>
+      <a href="#" class="btn btn--light" data-magnetic data-ripple>Book direct &amp; save 10%</a>
+      <p>hello@harborhouse.co · +44 1234 567 890</p>
+    </section>
+  </main>
+
+  <footer class="footer"><a href="#" class="logo">Harbor<small>House</small></a><span>© 2026 Harbor House Hotel</span><nav><a href="#">Instagram</a><a href="#">Gift vouchers</a><a href="#">Careers</a></nav></footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bloom — Seasonal kitchen & wine bar</title>
+  <meta name="description" content="A seasonal kitchen serving honest food from local farms.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav" data-header>
+    <nav class="nav__side"><a href="#story">Story</a><a href="#menu">Menu</a></nav>
+    <a href="#" class="logo">Bloom<span>kitchen · wine</span></a>
+    <nav class="nav__side nav__side--r"><a href="#visit">Visit</a><a href="#reserve" class="btn btn--sm">Reserve</a></nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__text">
+        <p class="eyebrow" data-reveal>Seasonal kitchen · Since 2016</p>
+        <h1 data-split>Honest food, <em>slowly</em> made.</h1>
+        <p class="hero__lead" data-reveal data-delay="450">Vegetables from farms we know by name, bread baked at dawn, and a wine list that changes with the weather.</p>
+        <div class="hero__cta" data-reveal data-delay="600">
+          <a href="#reserve" class="btn" data-magnetic>Book a table</a>
+          <a href="#menu" class="link">See the menu →</a>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <div class="plate" data-reveal="zoom" data-delay="200">
+          <div class="plate__food" data-parallax="-0.06"></div>
+        </div>
+        <span class="leaf leaf--1" data-parallax="0.25"></span>
+        <span class="leaf leaf--2" data-parallax="-0.2"></span>
+        <span class="leaf leaf--3" data-parallax="0.35"></span>
+        <div class="badge"><svg viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#c">farm to table · since 2016 · farm to table · </textPath></text></svg><span>✿</span></div>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+      <div class="story__img ph ph--a" data-reveal="clip"><div data-parallax="0.1"></div></div>
+      <div class="story__text">
+        <p class="eyebrow" data-reveal>Our story</p>
+        <h2 data-split>A little kitchen with a big garden</h2>
+        <p data-reveal>Bloom started as a supper club in Chef Elena's back garden. Today we cook for forty guests a night, but the rules haven't changed: cook what's in season, waste nothing, and make everyone feel at home.</p>
+        <p class="signature" data-reveal data-delay="200">Elena Marsh, Head Chef</p>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu" data-tabs>
+      <div class="menu__head">
+        <p class="eyebrow" data-reveal>The menu</p>
+        <h2 data-split>Changes with the seasons</h2>
+        <div class="menu__tabs" data-reveal>
+          <button data-tab="brunch" class="is-active">Brunch</button>
+          <button data-tab="dinner">Dinner</button>
+          <button data-tab="sweets">Sweets</button>
+          <button data-tab="drinks">Drinks</button>
+        </div>
+      </div>
+      <div data-panel="brunch" class="menu__list">
+        <div class="dish"><h3>Sourdough & cultured butter</h3><i></i><span>6</span><p>Baked this morning, whipped sea-salt butter</p></div>
+        <div class="dish"><h3>Shakshuka</h3><i></i><span>14</span><p>Slow tomato, baked eggs, labneh, za'atar</p></div>
+        <div class="dish"><h3>Ricotta hotcakes</h3><i></i><span>13</span><p>Poached rhubarb, honeycomb, crème fraîche</p></div>
+        <div class="dish"><h3>Garden plate</h3><i></i><span>16</span><p>Soft egg, greens, pickles, hummus, seeds</p></div>
+      </div>
+      <div data-panel="dinner" class="menu__list">
+        <div class="dish"><h3>Burrata & blood orange</h3><i></i><span>15</span><p>Fennel, pistachio, chilli oil</p></div>
+        <div class="dish"><h3>Hand-cut tagliatelle</h3><i></i><span>22</span><p>Wild mushroom, brown butter, sage</p></div>
+        <div class="dish"><h3>Coal-roasted chicken</h3><i></i><span>28</span><p>Salsa verde, charred leeks, jus</p></div>
+        <div class="dish"><h3>Market fish</h3><i></i><span>MP</span><p>Ask your server about today's catch</p></div>
+      </div>
+      <div data-panel="sweets" class="menu__list">
+        <div class="dish"><h3>Olive oil cake</h3><i></i><span>9</span><p>Lemon curd, thyme, mascarpone</p></div>
+        <div class="dish"><h3>Dark chocolate pot</h3><i></i><span>10</span><p>Sea salt, cocoa nib crumble</p></div>
+        <div class="dish"><h3>Seasonal sorbet</h3><i></i><span>7</span><p>Three scoops, ask what's churning</p></div>
+      </div>
+      <div data-panel="drinks" class="menu__list">
+        <div class="dish"><h3>Natural wine by the glass</h3><i></i><span>9–14</span><p>Rotating list of small producers</p></div>
+        <div class="dish"><h3>Garden spritz</h3><i></i><span>11</span><p>Elderflower, cucumber, sparkling wine</p></div>
+        <div class="dish"><h3>House kombucha</h3><i></i><span>6</span><p>Brewed in-house, flavour changes weekly</p></div>
+      </div>
+    </section>
+
+    <!-- GALLERY strip -->
+    <section class="gallery" aria-label="Gallery">
+      <div data-marquee="45">
+        <div class="ph ph--a"></div><div class="ph ph--b"></div><div class="ph ph--c"></div><div class="ph ph--d"></div><div class="ph ph--e"></div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews">
+      <span class="reviews__mark">“</span>
+      <div data-carousel="6000">
+        <blockquote><p>The kind of place you tell your friends about and then worry it'll get too busy.</p><cite>— The Evening Standard</cite></blockquote>
+        <blockquote><p>Every plate tastes like someone cared deeply about it. Because someone did.</p><cite>— Good Food Guide</cite></blockquote>
+        <blockquote><p>A small, warm room serving the best tagliatelle in the city. Book ahead.</p><cite>— Sarah K., Google review</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- RESERVE + VISIT -->
+    <section class="reserve" id="reserve">
+      <div class="reserve__form" data-reveal="left">
+        <p class="eyebrow">Reservations</p>
+        <h2>Save me a seat</h2>
+        <form onsubmit="event.preventDefault(); this.innerHTML='<p class=&quot;thanks&quot;>Thank you! We\'ll confirm by email shortly.</p>'">
+          <label>Name<input required placeholder="Your name"></label>
+          <label>Email<input type="email" required placeholder="you@email.com"></label>
+          <div class="row">
+            <label>Date<input type="date" required></label>
+            <label>Time<select><option>12:30</option><option>13:30</option><option>18:30</option><option selected>19:30</option><option>20:30</option></select></label>
+            <label>Guests<select><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6+</option></select></label>
+          </div>
+          <button class="btn" data-magnetic>Request booking</button>
+        </form>
+      </div>
+      <div class="reserve__info" id="visit" data-reveal="right">
+        <div><h3>Find us</h3><p>14 Orchard Lane<br>Riverside, London E2 7AB</p></div>
+        <div><h3>Hours</h3><p>Tue–Fri · 12–3pm, 6–11pm<br>Sat–Sun · 10am–11pm<br>Monday · closed</p></div>
+        <div><h3>Say hello</h3><p><a href="tel:+442000000000">020 0000 0000</a><br><a href="mailto:hello@bloom.kitchen">hello@bloom.kitchen</a></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#" class="logo">Bloom</a>
+    <p>© 2026 Bloom Kitchen · <a href="#">Instagram</a> · <a href="#">Gift cards</a></p>
+  </footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

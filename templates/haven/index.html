@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haven Estates — Homes with a sense of place</title>
+  <meta name="description" content="Boutique real estate and architecture. Considered homes for considered living.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav" data-header>
+    <a href="#" class="logo">Haven<span>Estates</span></a>
+    <nav><a href="#homes">Homes</a><a href="#about">About</a><a href="#process">Process</a><a href="#contact">Contact</a></nav>
+    <a href="#contact" class="btn btn--sm">Book a viewing</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__img" data-reveal="clip"><div class="scene" data-parallax="0.18">
+        <span class="scene__sun"></span><span class="scene__hill"></span><span class="scene__house"><i></i><i></i><i></i></span>
+      </div></div>
+      <div class="hero__text">
+        <p data-reveal data-delay="300">Boutique real estate & architecture</p>
+        <h1 data-split data-delay="200">Homes with a <em>sense</em> of place.</h1>
+      </div>
+      <form class="search" data-reveal="up" data-delay="700" onsubmit="event.preventDefault(); location.hash='homes'">
+        <label><small>Location</small><select><option>Anywhere</option><option>Coastal</option><option>Countryside</option><option>City</option></select></label>
+        <label><small>Type</small><select><option>Any</option><option>Villa</option><option>Apartment</option><option>Cottage</option></select></label>
+        <label><small>Budget</small><select><option>Any</option><option>Up to $1M</option><option>$1M – $3M</option><option>$3M+</option></select></label>
+        <button class="btn" data-magnetic>Search homes</button>
+      </form>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+      <p data-split>We find, design and sell homes that are quietly <em>extraordinary</em>: built with natural materials, filled with light, and rooted in their landscape.</p>
+    </section>
+
+    <!-- HORIZONTAL SCROLL listings -->
+    <section class="homes" id="homes" data-hscroll>
+      <div class="hscroll__sticky">
+        <div class="hscroll__track">
+          <div class="homes__intro">
+            <span class="eyebrow">Featured homes</span>
+            <h2>Currently on the market</h2>
+            <p>Scroll to explore →</p>
+          </div>
+          <article class="home"><div class="home__img h1"></div><div class="home__meta"><div><h3>The Dune House</h3><p>Coastal · 4 bed · 320 m²</p></div><b>$2.4M</b></div></article>
+          <article class="home"><div class="home__img h2"></div><div class="home__meta"><div><h3>Oak Hollow</h3><p>Countryside · 5 bed · 410 m²</p></div><b>$1.85M</b></div></article>
+          <article class="home"><div class="home__img h3"></div><div class="home__meta"><div><h3>Atelier Loft</h3><p>City · 2 bed · 140 m²</p></div><b>$980K</b></div></article>
+          <article class="home"><div class="home__img h4"></div><div class="home__meta"><div><h3>Stone Barn</h3><p>Countryside · 3 bed · 260 m²</p></div><b>$1.2M</b></div></article>
+          <article class="home"><div class="home__img h5"></div><div class="home__meta"><div><h3>Cliff Pavilion</h3><p>Coastal · 6 bed · 520 m²</p></div><b>$4.1M</b></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about__imgs">
+        <div class="about__a h2" data-reveal="clip"></div>
+        <div class="about__b h4" data-reveal="clip" data-delay="200" data-parallax="-0.1"></div>
+      </div>
+      <div class="about__text">
+        <span class="eyebrow" data-reveal>About Haven</span>
+        <h2 data-split>Two decades of finding homes worth keeping</h2>
+        <p data-reveal>We're a small team of agents and architects. We take on fewer homes so we can know each one deeply: the way the light moves, the history of the walls, the walk to the nearest bakery.</p>
+        <div class="about__stats" data-stagger>
+          <div><b data-count="20" data-suffix="+"></b><span>Years</span></div>
+          <div><b data-count="640"></b><span>Homes sold</span></div>
+          <div><b data-count="98" data-suffix="%"></b><span>Asking price</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process">
+      <span class="eyebrow" data-reveal>How it works</span>
+      <h2 data-split>Selling with Haven</h2>
+      <div class="process__grid" data-stagger="120">
+        <div><span>I</span><h3>Valuation</h3><p>An honest, data-backed valuation within 48 hours. No inflated numbers.</p></div>
+        <div><span>II</span><h3>Story</h3><p>Architectural photography, film and a written story for every home.</p></div>
+        <div><span>III</span><h3>Showing</h3><p>Private viewings with qualified buyers. Never a crowd.</p></div>
+        <div><span>IV</span><h3>Closing</h3><p>We handle every detail through to the keys changing hands.</p></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial">
+      <div data-carousel="6500">
+        <blockquote><p>"They understood our house better than we did, and found the family who loves it just as much."</p><cite>The Morgans · sold Oak Hollow</cite></blockquote>
+        <blockquote><p>"Calm, honest and thoughtful from first call to final signature. A rare thing in property."</p><cite>Elena & Tom · bought The Dune House</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="contact__text">
+        <h2 data-split>Let's find your <em>place</em>.</h2>
+        <p data-reveal>Visit our studio, or leave your details and an agent will call you within a day.</p>
+        <address data-reveal>Haven Studio<br>8 Harbour Row, Falmouth<br>+44 1326 000 000</address>
+      </div>
+      <form data-reveal="right" onsubmit="event.preventDefault(); this.innerHTML='<p class=&quot;thanks&quot;>Thank you. We will call you soon.</p>'">
+        <input required placeholder="Your name" aria-label="Name">
+        <input type="email" required placeholder="Email" aria-label="Email">
+        <input type="tel" placeholder="Phone" aria-label="Phone">
+        <select aria-label="Interest"><option>I'd like to buy</option><option>I'd like to sell</option><option>Architecture enquiry</option></select>
+        <button class="btn" data-magnetic>Request a call</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#" class="logo">Haven<span>Estates</span></a>
+    <p>© 2026 Haven Estates Ltd.</p>
+    <nav><a href="#">Instagram</a><a href="#">Journal</a><a href="#">Careers</a></nav>
+  </footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

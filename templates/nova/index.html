@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVA — The AI copilot for your whole team</title>
+  <meta name="description" content="Nova connects your tools and does the busywork, so your team can do the real work.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" data-scroll-progress></div>
+  <header class="nav" data-header>
+    <a href="#" class="logo"><span class="logo__orb"></span>NOVA</a>
+    <nav><a href="#how" data-scramble="hover">How it works</a><a href="#features" data-scramble="hover">Features</a><a href="#security" data-scramble="hover">Security</a></nav>
+    <a href="#cta" class="btn btn--glow btn--sm" data-ripple>Request access</a>
+  </header>
+
+  <main>
+    <!-- HERO with particles -->
+    <section class="hero" data-particles="#8b7bff">
+      <div class="hero__inner">
+        <p class="chip" data-reveal><span class="chip__dot"></span><span data-scramble>NOVA 2.0 // NOW WITH AGENTS</span></p>
+        <h1 data-split>Your team's <span class="fx-gradient-text">AI copilot</span>, for everything.</h1>
+        <p class="lead" data-reveal data-delay="400">Nova connects to your tools, understands your work and handles the busywork: reports, follow-ups, research and summaries. Ask in plain English.</p>
+        <div class="cta" data-reveal data-delay="550">
+          <a href="#cta" class="btn btn--glow" data-magnetic data-ripple>Get early access</a>
+          <a href="#how" class="btn btn--ghost" data-ripple>See it work</a>
+        </div>
+      </div>
+
+      <!-- Terminal-style demo -->
+      <div class="term" data-reveal="zoom" data-delay="700">
+        <div class="term__bar"><i></i><i></i><i></i><span>nova — workspace</span></div>
+        <div class="term__body">
+          <p><span class="u">you</span> Summarise this week's customer calls and draft follow-ups.</p>
+          <p><span class="n">nova</span> Reading <b>23 calls</b> from Gong… found <b>4 themes</b>. Drafting <span data-typed="follow-up emails|a summary doc|tasks in Linear"></span></p>
+          <div class="term__bars" data-stagger="120"><span style="--w:92%">Pricing questions</span><span style="--w:74%">Onboarding friction</span><span style="--w:58%">SSO requests</span><span style="--w:33%">Mobile app</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="logos"><p>Works with the tools you already use</p>
+      <div data-marquee="30"><span>Slack</span><span>Notion</span><span>Gmail</span><span>Linear</span><span>HubSpot</span><span>Drive</span><span>Jira</span><span>Figma</span></div>
+    </section>
+
+    <!-- SCRUB statement -->
+    <section class="statement">
+      <p data-scrub>Most teams lose a full day every week to busywork. Nova gives it back: it reads, writes, sorts and remembers, so people can do the work only people can do.</p>
+    </section>
+
+    <!-- HOW: sticky stacking cards -->
+    <section class="how" id="how">
+      <h2 class="h2" data-split>How it works</h2>
+      <div class="stack" data-stack="110">
+        <article class="scard scard--1"><span>01</span><div><h3>Connect</h3><p>Plug in Slack, email, docs and your CRM in two minutes. Nova respects every permission you already have.</p></div><svg viewBox="0 0 200 120" data-draw><path d="M10 60 H70 M130 60 H190 M70 60 C90 20 110 20 130 60 C110 100 90 100 70 60"/><circle cx="10" cy="60" r="6"/><circle cx="190" cy="60" r="6"/></svg></article>
+        <article class="scard scard--2"><span>02</span><div><h3>Ask</h3><p>Type what you need in plain language. Nova plans the steps, finds the context and shows its working.</p></div><svg viewBox="0 0 200 120" data-draw><rect x="20" y="25" width="160" height="70" rx="14"/><path d="M45 60 H120 M45 45 H150 M45 75 H90"/></svg></article>
+        <article class="scard scard--3"><span>03</span><div><h3>Done</h3><p>Drafts, docs and tasks land where they belong. Approve with one click, or let trusted flows run on autopilot.</p></div><svg viewBox="0 0 200 120" data-draw><circle cx="100" cy="60" r="45"/><path d="M78 60 L95 77 L125 45"/></svg></article>
+      </div>
+    </section>
+
+    <!-- FEATURES with spotlight -->
+    <section class="features" id="features">
+      <h2 class="h2" data-split>Built for real work</h2>
+      <div class="grid" data-spotlight data-stagger>
+        <article class="card"><h3 data-scramble>MEMORY</h3><p>Nova remembers projects, people and preferences, so you never repeat yourself.</p></article>
+        <article class="card"><h3 data-scramble>AGENTS</h3><p>Hand off multi-step jobs. Nova researches, compares and reports back.</p></article>
+        <article class="card"><h3 data-scramble>CITATIONS</h3><p>Every answer links to its sources. Trust, but verify in one click.</p></article>
+        <article class="card"><h3 data-scramble>WORKFLOWS</h3><p>Turn any prompt into a repeatable workflow your whole team can run.</p></article>
+        <article class="card"><h3 data-scramble>VOICE</h3><p>Talk to Nova in meetings and get notes, decisions and tasks after.</p></article>
+        <article class="card"><h3 data-scramble>ANALYTICS</h3><p>See time saved per team and where automation pays off most.</p></article>
+      </div>
+    </section>
+
+    <!-- SECURITY + NUMBERS -->
+    <section class="security" id="security">
+      <div class="security__text">
+        <h2 class="h2" data-split>Enterprise-grade by default</h2>
+        <ul data-stagger><li>SOC 2 Type II and ISO 27001</li><li>Your data never trains our models</li><li>SSO, SCIM and audit logs</li><li>EU and US data residency</li></ul>
+      </div>
+      <div class="nums" data-stagger>
+        <div><b data-count="9.6" data-suffix="h"></b><span>saved per person, per week</span></div>
+        <div><b data-count="1200" data-suffix="+"></b><span>teams in beta</span></div>
+        <div><b data-count="99.95" data-suffix="%"></b><span>uptime</span></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-sec" id="cta">
+      <div class="orb fx-blob" aria-hidden="true"></div>
+      <h2 data-split>The future of work is <em>quiet</em>.</h2>
+      <form onsubmit="event.preventDefault(); this.innerHTML='<p class=&quot;thanks&quot; data-scramble>ACCESS REQUESTED. WE WILL BE IN TOUCH.</p>'">
+        <input type="email" required placeholder="work@company.com" aria-label="Work email">
+        <button class="btn btn--glow" data-ripple>Request access</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer"><a href="#" class="logo"><span class="logo__orb"></span>NOVA</a><span>© 2026 Nova Labs Inc.</span><nav><a href="#">Privacy</a><a href="#">Status</a><a href="#">Careers</a></nav></footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

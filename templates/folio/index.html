@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ines Moreau — Photographer</title>
+  <meta name="description" content="Portrait, fashion and travel photography by Ines Moreau. Based in Paris, working worldwide.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Newsreader:ital,opsz@1,6..72&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Intro loader -->
+  <div class="loader" data-preloader="1600"><span class="loader__name">Ines Moreau</span><span class="loader__num"><span data-preloader-count>0</span>%</span></div>
+
+  <header class="nav">
+    <a href="#" class="logo">Ines Moreau</a>
+    <nav><a href="#work" class="fx-underline">Work</a><a href="#about" class="fx-underline">About</a><a href="#contact" class="fx-underline">Contact</a></nav>
+    <span class="nav__loc">Paris — 48.85°N</span>
+  </header>
+
+  <main>
+    <!-- HERO with image trail -->
+    <section class="hero" data-trail="80">
+      <div class="trail-item ph p1"></div><div class="trail-item ph p2"></div><div class="trail-item ph p3"></div><div class="trail-item ph p4"></div>
+      <div class="trail-item ph p5"></div><div class="trail-item ph p6"></div><div class="trail-item ph p7"></div><div class="trail-item ph p8"></div>
+      <h1 class="hero__name"><span data-split="chars">INES</span><span data-split="chars" data-delay="200">MOREAU</span></h1>
+      <div class="hero__foot">
+        <p data-reveal>Portrait, fashion &amp; travel photographer.<br>Working worldwide since 2013.</p>
+        <p class="hint" data-reveal data-delay="200">( move your cursor )</p>
+        <p data-reveal data-delay="300">Clients: Vogue, Aesop, COS,<br>Air France, Kinfolk</p>
+      </div>
+    </section>
+
+    <!-- EXPANDING image -->
+    <section class="feature">
+      <div class="feature__img ph p3" data-expand="12"><span>Kinfolk — Slow Summer, 2026</span></div>
+    </section>
+
+    <!-- GALLERY (masonry) -->
+    <section class="work" id="work">
+      <div class="work__head"><h2 data-split>Selected work</h2><span data-reveal>( 2019 — 2026 )</span></div>
+      <div class="masonry">
+        <figure data-reveal><div class="ph p1 tall"></div><figcaption>Aesop — Hands, 2026</figcaption></figure>
+        <figure data-reveal data-delay="100"><div class="ph p5"></div><figcaption>Lisbon at dusk</figcaption></figure>
+        <figure data-reveal data-delay="200"><div class="ph p2 tall"></div><figcaption>COS — FW25</figcaption></figure>
+        <figure data-reveal><div class="ph p6"></div><figcaption>Atlas Mountains</figcaption></figure>
+        <figure data-reveal data-delay="100"><div class="ph p4 tall"></div><figcaption>Portrait of Léa</figcaption></figure>
+        <figure data-reveal data-delay="200"><div class="ph p7"></div><figcaption>Air France — Horizons</figcaption></figure>
+        <figure data-reveal><div class="ph p8"></div><figcaption>Studio, Paris</figcaption></figure>
+        <figure data-reveal data-delay="100"><div class="ph p3"></div><figcaption>Kyoto rain</figcaption></figure>
+        <figure data-reveal data-delay="200"><div class="ph p1"></div><figcaption>Vogue — Quiet Luxury</figcaption></figure>
+      </div>
+    </section>
+
+    <!-- ABOUT scrub -->
+    <section class="about" id="about">
+      <span class="label" data-reveal>About</span>
+      <p data-scrub>I photograph people and places with patience. Natural light, real moments, and an eye for the small details that make an image feel like a memory rather than a picture.</p>
+    </section>
+
+    <!-- SERVICES list -->
+    <section class="services">
+      <div class="row" data-reveal><span>01</span><h3>Editorial &amp; fashion</h3><p>Campaigns, lookbooks, magazine stories.</p></div>
+      <div class="row" data-reveal><span>02</span><h3>Portraits</h3><p>Personal, brand and corporate portraits.</p></div>
+      <div class="row" data-reveal><span>03</span><h3>Travel &amp; hospitality</h3><p>Hotels, destinations and tourism boards.</p></div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <span class="label" data-reveal>Get in touch</span>
+      <a href="mailto:studio@inesmoreau.com" class="contact__mail" data-split="chars">studio@inesmoreau.com</a>
+      <div class="contact__links" data-stagger><a href="#" class="fx-underline">Instagram</a><a href="#" class="fx-underline">Behance</a><a href="#" class="fx-underline">Represented by Agence Lumière</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><span>© 2026 Ines Moreau</span><span>All images © the photographer</span></footer>
+
+  <script src="../_shared/motion.js"></script>
+</body>
+</html>

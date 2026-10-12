@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template Vault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vault.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="brand__mark"></span>
+      <div><b>Template Vault</b><small id="summary"></small></div>
+    </div>
+    <div class="tabs" role="tablist">
+      <button class="is-active" data-view="templates" role="tab">Templates</button>
+      <button data-view="animations" role="tab">Animations</button>
+      <button data-view="styles" role="tab">Styles</button>
+    </div>
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="Search…  ( / )" autocomplete="off">
+    </label>
+  </header>
+
+  <section class="intro">
+    <h1>Every website starts <em>here.</em></h1>
+    <p>Browse your templates live, preview them on any device, then spin up a client project in one command.</p>
+  </section>
+
+  <!-- TEMPLATES VIEW -->
+  <main id="view-templates" class="view is-active">
+    <div class="filters">
+      <div class="filters__row">
+        <span class="filters__label">Industry</span>
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="filters__row">
+        <span class="filters__label">Style</span>
+        <div class="chips" id="style-chips"></div>
+        <div class="filters__right">
+          <div class="chips chips--theme">
+            <button data-theme="all" class="is-active">All</button>
+            <button data-theme="light">Light</button>
+            <button data-theme="dark">Dark</button>
+          </div>
+          <button class="fav-filter" id="fav-filter" aria-pressed="false">★ Favourites</button>
+          <select id="sort" aria-label="Sort"><option value="default">Sort: Featured</option><option value="az">Sort: A–Z</option><option value="new">Sort: Newest</option></select>
+        </div>
+      </div>
+    </div>
+    <p class="count" id="count"></p>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No templates match. Try clearing a filter.</p>
+  </main>
+
+  <!-- ANIMATIONS VIEW -->
+  <main id="view-animations" class="view">
+    <div class="anim-head">
+      <p>Every effect is a single HTML attribute or class, powered by <code>templates/_shared/motion.js</code> + <code>motion.css</code>. Copy a snippet into any page that loads the kit.</p>
+      <a class="btn btn--ghost" href="animations.html" target="_blank">See all animations live ↗</a>
+    </div>
+    <div class="chips" id="group-chips"></div>
+    <div id="snippets"></div>
+  </main>
+
+  <!-- STYLES VIEW -->
+  <main id="view-styles" class="view">
+    <h2 class="sub">Colour palettes <small>Click a colour to copy it, or copy the whole palette as CSS.</small></h2>
+    <div class="palettes" id="palettes"></div>
+    <h2 class="sub">Font pairings <small>All free on Google Fonts. Copy gives you the &lt;link&gt; tag and CSS.</small></h2>
+    <div class="fonts" id="fonts"></div>
+  </main>
+
+  <!-- PREVIEW MODAL -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__bar">
+      <button class="icon-btn" data-close aria-label="Close preview">✕</button>
+      <button class="icon-btn" id="m-prev" title="Previous template (←)">‹</button>
+      <button class="icon-btn" id="m-next" title="Next template (→)">›</button>
+      <div class="modal__title"><b id="m-name"></b><small id="m-cat"></small></div>
+      <div class="devices" id="devices">
+        <button data-w="100%" class="is-active" title="Desktop"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></button>
+        <button data-w="820px" title="Tablet"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></button>
+        <button data-w="390px" title="Mobile"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></button>
+      </div>
+      <div class="modal__actions">
+        <button class="icon-btn" id="m-fav" title="Favourite">☆</button>
+        <button class="icon-btn" id="m-reload" title="Replay animations">↻</button>
+        <a class="btn btn--ghost btn--sm" id="m-open" target="_blank">Open ↗</a>
+        <button class="btn btn--sm" id="m-info-toggle">Use template</button>
+      </div>
+    </div>
+    <div class="modal__body">
+      <div class="stage"><div class="stage__frame" id="frame-wrap"><iframe id="m-frame" title="Template preview"></iframe></div></div>
+      <aside class="info" id="info">
+        <p id="m-desc"></p>
+        <dl>
+          <dt>Best for</dt><dd id="m-best"></dd>
+          <dt>Style</dt><dd id="m-style"></dd>
+          <dt>Fonts</dt><dd id="m-fonts"></dd>
+          <dt>Palette</dt><dd id="m-colors" class="swatches swatches--lg"></dd>
+          <dt>Sections</dt><dd id="m-sections" class="tags"></dd>
+          <dt>Animations</dt><dd id="m-anims" class="tags"></dd>
+        </dl>
+        <div class="use">
+          <h3>Start a client project</h3>
+          <label>Client name<input id="m-client" placeholder="e.g. Sunrise Bakery"></label>
+          <pre id="m-cmd"></pre>
+          <button class="btn btn--full" id="m-copy">Copy command</button>
+          <p class="hint">Paste it into PowerShell in your <code>template-vault</code> folder. It creates <code>clients/&lt;name&gt;/</code> with this template and the animation kit, ready to edit.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="registry.js"></script>
+  <script src="vault.js"></script>
+</body>
+</html>

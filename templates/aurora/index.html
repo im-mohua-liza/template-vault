@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aurora — Analytics that think ahead</title>
+  <meta name="description" content="Aurora turns raw data into decisions your team can act on.">
+  <script>document.documentElement.classList.add('motion')</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../_shared/motion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress" data-scroll-progress></div>
+
+  <!-- Background aurora blobs -->
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <header class="nav" data-header>
+    <div class="wrap nav__inner">
+      <a href="#" class="logo"><span class="logo__mark"></span>Aurora</a>
+      <nav class="nav__links">
+        <a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      </nav>
+      <a href="#cta" class="btn btn--ghost btn--sm">Get started</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero wrap">
+      <a class="pill" href="#features" data-reveal="down"><span class="pill__new">New</span> Aurora 3.0 is live — see what changed <span aria-hidden="true">→</span></a>
+      <h1 class="hero__title" data-split>Analytics that think <em>ahead</em> of you</h1>
+      <p class="hero__lead" data-reveal data-delay="400">Turn raw data into decisions your team can actually act on. Built for teams who <span class="typed" data-typed="move fast|ship weekly|hate spreadsheets|love clarity"></span></p>
+      <div class="hero__cta" data-reveal data-delay="550">
+        <a href="#cta" class="btn btn--primary" data-magnetic>Start free trial</a>
+        <a href="#features" class="btn btn--ghost" data-magnetic>Watch demo <span class="play">▶</span></a>
+      </div>
+
+      <!-- Product mockup built in CSS -->
+      <div class="mock" data-reveal="zoom" data-delay="700">
+        <div class="mock__glow"></div>
+        <div class="mock__bar"><i></i><i></i><i></i><span>app.aurora.io/dashboard</span></div>
+        <div class="mock__body">
+          <aside class="mock__side"><b></b><b></b><b></b><b></b><b></b></aside>
+          <div class="mock__main">
+            <div class="mock__kpis">
+              <div><small>Revenue</small><strong>$<span data-count="248.6" data-suffix="k"></span></strong><em class="up">+18.2%</em></div>
+              <div><small>Active users</small><strong data-count="12480"></strong><em class="up">+9.4%</em></div>
+              <div><small>Churn</small><strong data-count="1.8" data-suffix="%"></strong><em class="down">−0.6%</em></div>
+            </div>
+            <div class="mock__chart" data-stagger="60">
+              <span style="--h:38%"></span><span style="--h:52%"></span><span style="--h:44%"></span><span style="--h:66%"></span><span style="--h:58%"></span><span style="--h:74%"></span><span style="--h:63%"></span><span style="--h:82%"></span><span style="--h:71%"></span><span style="--h:90%"></span><span style="--h:78%"></span><span style="--h:96%"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="logos">
+      <p class="logos__label">Trusted by fast-moving teams</p>
+      <div data-marquee="28">
+        <span>Northwind</span><span>◆ Lumen</span><span>Orbitly</span><span>▲ Vertex</span><span>Kinfolk</span><span>● Quanta</span><span>Helix</span><span>Polaris</span>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section wrap" id="features">
+      <div class="section__head">
+        <span class="eyebrow" data-reveal>Features</span>
+        <h2 data-split>Everything you need, nothing you don't</h2>
+        <p data-reveal>Six building blocks that replace a stack of tools.</p>
+      </div>
+      <div class="grid3" data-stagger>
+        <article class="card" data-tilt="8"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-4 3 3 5-6"/></svg></div><h3>Live dashboards</h3><p>Every metric updates in real time. No refresh button, ever.</p></article>
+        <article class="card" data-tilt="8"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div><h3>AI insights</h3><p>Aurora spots trends and anomalies before your team does.</p></article>
+        <article class="card" data-tilt="8"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H5.2L4 17.2zM8 9h8M8 12h5"/></svg></div><h3>Smart alerts</h3><p>Get pinged in Slack when something actually matters.</p></article>
+        <article class="card" data-tilt="8"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div><h3>200+ integrations</h3><p>Connect Stripe, HubSpot, Postgres and more in a click.</p></article>
+        <article class="card" data-tilt="8"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Bank-grade security</h3><p>SOC 2 Type II, SSO and granular roles out of the box.</p></article>
+        <article class="card" data-tilt="8"><div class="card__icon"><svg viewBox="0 0 24 24"><path d="M17 20v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M10 10a4 4 0 100-8 4 4 0 000 8zM21 20v-2a4 4 0 00-3-3.9M16 2.1a4 4 0 010 7.8"/></svg></div><h3>Built for teams</h3><p>Comments, shared views and permissions that make sense.</p></article>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats wrap" data-stagger>
+      <div><strong data-count="4200" data-suffix="+"></strong><span>Teams onboard</span></div>
+      <div><strong data-count="99.99" data-suffix="%"></strong><span>Uptime</span></div>
+      <div><strong data-count="38" data-suffix="M"></strong><span>Events per day</span></div>
+      <div><strong data-count="4.9" data-suffix="/5"></strong><span>Average rating</span></div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section wrap quote">
+      <div data-carousel="5500">
+        <blockquote><p>"We replaced four tools with Aurora and our weekly review went from two hours to twenty minutes."</p><cite><b>Priya Raman</b> · Head of Growth, Lumen</cite></blockquote>
+        <blockquote><p>"The AI insights caught a pricing bug that would have cost us a quarter's revenue. Paid for itself on day one."</p><cite><b>Marcus Hale</b> · CFO, Orbitly</cite></blockquote>
+        <blockquote><p>"Finally a dashboard the whole company actually opens. Design matters, and Aurora gets it."</p><cite><b>Aiko Tanaka</b> · CEO, Kinfolk</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section wrap" id="pricing">
+      <div class="section__head">
+        <span class="eyebrow" data-reveal>Pricing</span>
+        <h2 data-split>Simple pricing that scales with you</h2>
+        <div class="toggle" data-reveal>
+          <button class="is-active" data-billing="monthly">Monthly</button>
+          <button data-billing="yearly">Yearly <small>−20%</small></button>
+        </div>
+      </div>
+      <div class="grid3 pricing" data-stagger>
+        <article class="plan"><h3>Starter</h3><p class="plan__price">$<span data-m="0" data-y="0">0</span><small>/mo</small></p><p>For side projects and small teams getting started.</p><ul><li>3 dashboards</li><li>1M events / month</li><li>Community support</li></ul><a href="#cta" class="btn btn--ghost">Start free</a></article>
+        <article class="plan plan--featured"><span class="plan__badge">Most popular</span><h3>Growth</h3><p class="plan__price">$<span data-m="49" data-y="39">49</span><small>/mo</small></p><p>Everything a growing team needs to move fast.</p><ul><li>Unlimited dashboards</li><li>25M events / month</li><li>AI insights + alerts</li><li>Priority support</li></ul><a href="#cta" class="btn btn--primary">Start 14-day trial</a></article>
+        <article class="plan"><h3>Enterprise</h3><p class="plan__price">$<span data-m="199" data-y="159">199</span><small>/mo</small></p><p>Advanced security and control for large orgs.</p><ul><li>SSO + audit logs</li><li>Unlimited events</li><li>Dedicated manager</li></ul><a href="#cta" class="btn btn--ghost">Talk to sales</a></article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section wrap faq" id="faq">
+      <div class="section__head"><span class="eyebrow" data-reveal>FAQ</span><h2 data-split>Questions, answered</h2></div>
+      <div data-stagger>
+        <details><summary>Is there really a free plan?</summary><p>Yes. Starter is free forever with no credit card required. Upgrade only when you need more.</p></details>
+        <details><summary>How long does setup take?</summary><p>Most teams connect their first data source and see a live dashboard in under ten minutes.</p></details>
+        <details><summary>Can I cancel any time?</summary><p>Absolutely. Plans are month-to-month and you can export all of your data whenever you like.</p></details>
+        <details><summary>Do you offer discounts for nonprofits?</summary><p>We offer 50% off Growth for registered nonprofits and education. Just get in touch.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta wrap" id="cta">
+      <div class="cta__box" data-reveal="zoom">
+        <h2 data-split>Ready to see your data clearly?</h2>
+        <p>Join 4,200+ teams making better decisions with Aurora.</p>
+        <form class="cta__form" onsubmit="event.preventDefault(); this.innerHTML='<p class=&quot;thanks&quot;>Thanks! Check your inbox ✨</p>'">
+          <input type="email" placeholder="you@company.com" required aria-label="Email">
+          <button class="btn btn--primary" data-magnetic>Get started</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <a href="#" class="logo"><span class="logo__mark"></span>Aurora</a>
+    <p>© 2026 Aurora Labs. All rights reserved.</p>
+    <nav><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a></nav>
+  </footer>
+
+  <script src="../_shared/motion.js"></script>
+  <script>
+    // Pricing toggle
+    document.querySelectorAll('[data-billing]').forEach(btn => btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-billing]').forEach(b => b.classList.toggle('is-active', b === btn));
+      const yearly = btn.dataset.billing === 'yearly';
+      document.querySelectorAll('[data-m]').forEach(el => { el.textContent = yearly ? el.dataset.y : el.dataset.m; });
+    }));
+  </script>
+</body>
+</html>
