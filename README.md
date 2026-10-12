@@ -34,7 +34,11 @@ Each template is plain HTML + CSS + a little JS. There's no build step and nothi
   - Click a card to preview it full-screen at desktop, tablet or mobile size. Use ‹ › or the arrow keys to flip between templates.
 - **Animations tab**: 42 copy-paste effects in 6 groups (Entrances, Text, Scroll, Mouse, Interactive, Ambient). **Live ↗** opens each one's demo in `animations.html`.
 - **Styles tab**: colour palettes (click a colour to copy its code, or copy the whole palette as CSS) and Google font pairings (Copy gives you the `<link>` tag and CSS).
-- Direct links: `index.html#animations` and `index.html#styles` open those tabs.
+- **Customise** (in any preview): change the template's brand colours, pick a font pairing, or apply a quick palette. The preview updates live. **Copy brand CSS** gives you the overrides, and the project command below includes them automatically.
+- **Client shortlist**: star (★) the templates you want to show a client, type their name in the shortlist bar, and **Copy client link**. It opens `present.html`, a clean "Website concepts for …" page with Option A, B, C and live previews. Share the link from the live site so the client can open it.
+- **Launch tab**: a 28-point pre-launch checklist (content, design, forms, SEO, performance, launch), saved per client project in your browser.
+- **Shareable links**: `index.html#preview/nova` opens a preview directly (🔗 copies it). `#animations`, `#styles` and `#launch` open those tabs.
+- **Shortcuts**: `/` search, `R` random template (🎲), `1`–`4` tabs or device sizes, `←` `→` flip templates, `F` favourite, `?` help.
 - **Use template**: type the client's name and copy the command it gives you.
 
 ## Start a client project
@@ -46,6 +50,8 @@ powershell -ExecutionPolicy Bypass -File .\new-site.ps1 -Template bloom -Client 
 ```
 
 This creates `clients\sunrise-bakery\` with the template and its own copy of the animation kit (`assets\`), so it's fully standalone. Run with `-List` to see template names, or `-Dest D:\Sites` to create it somewhere else.
+
+If you customised the template in the vault, the copied command also carries `-Theme "--bg:#…;--accent:#…"` and `-Fonts "Display|Body" -FontVars "--display|--font"`. Those are written into the new project as a "Brand overrides" block at the end of `style.css`, plus a Google Fonts link. (`templates/_shared/vault-bridge.js` powers the live preview and is left out of client projects.)
 
 Then in the client folder:
 1. **Brand it**: change the `:root` colour and font tokens at the top of `style.css`. The Styles tab gives you ready-made sets.

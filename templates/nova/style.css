@@ -8,7 +8,7 @@
   --violet: #8b7bff;
   --cyan: #4de3ff;
   --lime: #b6ff6c;
-  --g1: #8b7bff; --g2: #4de3ff; --g3: #b6ff6c;
+  --g1: var(--violet); --g2: var(--cyan); --g3: var(--lime);
   --spot: rgba(139, 123, 255, .14);
   --font: 'Sora', system-ui, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, monospace;

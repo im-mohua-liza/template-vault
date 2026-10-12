@@ -64,7 +64,7 @@ window.TEMPLATES = [
   },
   {
     id: 'velvet', name: 'Velvet', category: 'Beauty & Wellness', style: 'Luxury', theme: 'light', added: '2026-10-12',
-    description: 'Soft blush-and-plum beauty studio with morphing blob shapes, an arched portrait, tabbed treatment menu and a draggable before/after slider.',
+    description: 'Soft blush-and-plum beauty studio with morphing blob shapes, an arched product shot, tabbed treatment menu and a draggable before/after slider.',
     bestFor: 'Salons, spas, skincare, aesthetics clinics, nail & lash studios',
     colors: ['#fbf4ef', '#3d2430', '#c97b6b', '#c9a27a'], fonts: 'Bodoni Moda + Outfit',
     sections: ['Hero', 'Treatments marquee', 'Tabbed rituals menu', 'Before/after results', 'Reviews', 'Booking form'],
@@ -256,4 +256,34 @@ window.FONT_PAIRS = [
   { display: 'Unbounded', body: 'Manrope', mood: 'Bold product' },
   { display: 'Plus Jakarta Sans', body: 'Plus Jakarta Sans', mood: 'Clean health & SaaS' },
   { display: 'Instrument Serif', body: 'Inter Tight', mood: 'Minimal portfolio' }
+];
+
+/* Customiser: which CSS variables each template exposes in the vault's
+   "Customize" panel. colors: [variable, label, default], fonts: which
+   variable takes the display (headings) font and which takes the body font. */
+window.CUSTOMIZE = {
+  aurora: { colors: [['--bg', 'Background', '#07071a'], ['--text', 'Text', '#ecebff'], ['--violet', 'Primary', '#7c5cff'], ['--cyan', 'Secondary', '#22d3ee'], ['--pink', 'Accent', '#f472b6']], fonts: { display: '--display', body: '--font' } },
+  noir:   { colors: [['--bg', 'Background', '#0a0a0a'], ['--text', 'Text', '#f2efe9'], ['--accent', 'Accent', '#d4ff3a']], fonts: { display: '--display', body: '--font' } },
+  bloom:  { colors: [['--cream', 'Background', '#f6efe4'], ['--green', 'Primary', '#1f3a2e'], ['--terracotta', 'Accent', '#c8643b'], ['--gold', 'Highlight', '#d9a441']], fonts: { display: '--serif', body: '--font' } },
+  atlas:  { colors: [['--bg', 'Background', '#ffffff'], ['--navy', 'Primary', '#0f2a4a'], ['--accent', 'Accent', '#14b8a6'], ['--accent-2', 'Highlight', '#f59e0b'], ['--soft', 'Soft panels', '#f3f6f9']], fonts: { display: '--serif', body: '--font' } },
+  pulse:  { colors: [['--bg', 'Background', '#0b0b0b'], ['--text', 'Text', '#f5f5f5'], ['--neon', 'Primary', '#c6ff00'], ['--hot', 'Accent', '#ff2e88']], fonts: { display: '--display', body: '--font' } },
+  haven:  { colors: [['--bg', 'Background', '#f4f1ec'], ['--ink', 'Text', '#1c1c1c'], ['--sand', 'Accent', '#b89b72']], fonts: { display: '--serif', body: '--font' } },
+  byte:   { colors: [['--bg', 'Background', '#fffbea'], ['--ink', 'Ink', '#111111'], ['--yellow', 'Colour 1', '#ffd23f'], ['--pink', 'Colour 2', '#ff5d8f'], ['--blue', 'Colour 3', '#3a86ff'], ['--green', 'Colour 4', '#06d6a0']], fonts: { display: '--display', body: '--mono' } },
+  velvet: { colors: [['--bg', 'Background', '#fbf4ef'], ['--plum', 'Primary', '#3d2430'], ['--rose', 'Accent', '#c97b6b'], ['--blush', 'Soft', '#f3d9cf'], ['--gold', 'Highlight', '#c9a27a']], fonts: { display: '--serif', body: '--font' } },
+  nova:   { colors: [['--bg', 'Background', '#05050c'], ['--text', 'Text', '#eceaff'], ['--violet', 'Primary', '#8b7bff'], ['--cyan', 'Secondary', '#4de3ff'], ['--lime', 'Accent', '#b6ff6c']], fonts: { display: '--font', body: null } },
+  folio:  { colors: [['--bg', 'Background', '#efede8'], ['--ink', 'Ink', '#141414']], fonts: { display: '--font', body: null } },
+  harbor: { colors: [['--bg', 'Background', '#f3efe7'], ['--navy', 'Primary', '#12304a'], ['--sea', 'Secondary', '#2f6f8f'], ['--coral', 'Accent', '#e07a5f'], ['--sand', 'Sand', '#e3cfae']], fonts: { display: '--serif', body: '--font' } },
+  kite:   { colors: [['--bg', 'Background', '#fffaf2'], ['--text', 'Text', '#1b1340'], ['--purple', 'Primary', '#8338ec'], ['--yellow', 'Colour 2', '#ffbe0b'], ['--pink', 'Colour 3', '#ff006e'], ['--green', 'Colour 4', '#06d6a0']], fonts: { display: '--display', body: '--font' } },
+  drift:  { colors: [['--bg', 'Background', '#e4ebe1'], ['--ink', 'Text', '#1f2a1f'], ['--prod', 'Product', '#9cb39a'], ['--prod-2', 'Product shade', '#6f8a6d'], ['--accent', 'Accent', '#2f4a2d']], fonts: { display: '--display', body: '--font' } },
+  care:   { colors: [['--bg', 'Background', '#f6faf9'], ['--text', 'Text', '#0f2d2a'], ['--teal', 'Primary', '#0f8b7e'], ['--teal-2', 'Primary soft', '#d6efeb'], ['--warm', 'Accent', '#ffb48a']], fonts: { display: '--font', body: null } }
+};
+
+/* Launch checklist (Launch tab). Grouped tasks to tick off per client project. */
+window.CHECKLIST = [
+  { group: 'Content', items: ['Replace all placeholder text with the client\'s copy', 'Swap gradient placeholders for real, compressed photos', 'Add the client\'s logo and favicon', 'Check names, prices, phone numbers and addresses', 'Proofread every page (spelling, grammar, tone)'] },
+  { group: 'Design', items: ['Brand colours and fonts applied', 'Check on mobile, tablet and desktop', 'Test in Chrome, Safari and Firefox', 'All buttons and links go somewhere real', 'Remove sections the client does not need'] },
+  { group: 'Forms & features', items: ['Contact / booking form sends to the client\'s inbox', 'Form shows a clear thank-you message', 'Countdowns and dates updated', 'Social media links point to the right accounts', 'Maps, phone and email links work on mobile'] },
+  { group: 'SEO & sharing', items: ['Unique <title> and meta description', 'Social share image (og:image) added', 'Alt text on every image', 'One clear H1 per page', 'Google Search Console / Analytics set up (if wanted)'] },
+  { group: 'Performance & legal', items: ['Images under ~300 KB each', 'Page loads fast on 4G (PageSpeed check)', 'Privacy policy page (and cookie notice if needed)', 'Copyright year and business details in footer'] },
+  { group: 'Launch', items: ['Domain connected and HTTPS working', 'Client has reviewed and approved', 'Backup / Git repo of the final site', 'Handover: logins, how to edit, invoice sent'] }
 ];
